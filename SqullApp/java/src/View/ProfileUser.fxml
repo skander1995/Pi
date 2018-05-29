@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="1212.0" xmlns="http://javafx.com/javafx/8.0.162" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProfileUserController">
+   <children>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="14.0" onAction="#photoSelecteur" prefHeight="158.0" prefWidth="192.0">
+         <graphic>
+            <ImageView fx:id="usrPhotoProfile" fitHeight="203.0" fitWidth="211.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/View/Assets/icons/utilisateur-sexe-neutre-50.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <AnchorPane blendMode="HARD_LIGHT" cache="true" layoutX="239.0" layoutY="14.0" prefHeight="186.0" prefWidth="691.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="251.0" AnchorPane.topAnchor="14.0">
+         <children>
+            <Label fx:id="loginLabel" layoutX="14.0" layoutY="7.0" prefHeight="38.0" prefWidth="274.0" text="\@Login" textFill="#979393">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="namePrnLabel" layoutX="165.0" layoutY="55.0" prefHeight="38.0" prefWidth="198.0" text="Nom et prenom">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="dnLabel" alignment="BASELINE_LEFT" layoutX="165.0" layoutY="93.0" prefHeight="38.0" prefWidth="198.0" text="Date de Naissance">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailLabel" layoutX="165.0" layoutY="169.0" prefHeight="38.0" prefWidth="198.0" text="Email">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="phoneLabel" layoutX="165.0" layoutY="131.0" prefHeight="38.0" prefWidth="198.0" text="Telephone">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="64.0" text="Nom">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="140.0" text="Telephone">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="102.0" text="Date de naissance">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="178.0" text="Email">
+               <font>
+                  <Font name="Serif Regular" size="17.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="modifierButton" buttonType="RAISED" defaultButton="true" layoutX="545.0" layoutY="173.0" onMouseClicked="#popUserUpdater" text="Modifier informations" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="14.0" />
+         </children>
+      </AnchorPane>
+      <Separator layoutX="230.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="552.0" prefWidth="6.0" AnchorPane.bottomAnchor="1.0" AnchorPane.topAnchor="-1.0" />
+      <AnchorPane layoutX="630.0" prefHeight="552.0" prefWidth="241.0" style="-fx-background-color: E4F1FE;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="reportButton" layoutX="50.0" layoutY="479.0" onMouseClicked="#popReportWindow" onMousePressed="#popReportWindow" prefHeight="38.0" prefWidth="141.0" style="-fx-background-color: red;" text="Signaler" textFill="#fffefe" AnchorPane.bottomAnchor="35.0" />
+            <Label fx:id="info1" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="47.0" lineSpacing="10.0" prefHeight="73.0" prefWidth="97.0" style="-fx-border-image-width: 4; -fx-border-style: solid; -fx-border-color: white; -fx-background-color: white;" styleClass="root" stylesheets="@Assets/css/shadowpane.css" text="Covoiturage" textAlignment="CENTER" textOverrun="CLIP">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font></Label>
+            <Label fx:id="info3" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="14.0" layoutY="148.0" prefHeight="73.0" prefWidth="97.0" style="-fx-border-image-width: 4; -fx-border-style: solid; -fx-border-color: white; -fx-background-color: white;" styleClass="root" stylesheets="@Assets/css/shadowpane.css" text="Evenement" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font></Label>
+            <Label fx:id="info4" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="130.0" layoutY="148.0" prefHeight="73.0" prefWidth="97.0" style="-fx-border-image-width: 4; -fx-border-style: solid; -fx-border-color: white; -fx-background-color: white;" styleClass="root" stylesheets="@Assets/css/shadowpane.css" text="Aide" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font></Label>
+            <Label fx:id="info2" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="130.0" layoutY="47.0" prefHeight="73.0" prefWidth="97.0" style="-fx-border-image-width: 4; -fx-border-style: solid; -fx-border-color: white; -fx-background-color: white;" styleClass="root" stylesheets="@Assets/css/shadowpane.css" text="Colocation" textAlignment="CENTER">
+               <font>
+                  <Font name="Segoe UI" size="16.0" />
+               </font></Label>
+            <Text fx:id="infoCov" fontSmoothingType="LCD" layoutX="51.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+            <Text fx:id="infoEv" fontSmoothingType="LCD" layoutX="51.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+            <Text fx:id="infoAide" fontSmoothingType="LCD" layoutX="167.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+            <Text fx:id="infoCol" fontSmoothingType="LCD" layoutX="167.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" />
+         </children>
+         <effect>
+            <Blend mode="SCREEN" opacity="0.26" />
+         </effect>
+      </AnchorPane>
+      <Pane layoutX="262.0" layoutY="245.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="262.0" AnchorPane.rightAnchor="262.0" AnchorPane.topAnchor="245.0">
+         <children>
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="365.0" prefWidth="688.0" style="-fx-background-color: white;">
+               <content>
+                  <VBox fx:id="vBoxContainer" prefHeight="363.0" prefWidth="462.0" spacing="30.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

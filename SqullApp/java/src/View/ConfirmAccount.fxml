@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/8.0.162" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ConfirmAccountController">
+   <children>
+      <JFXTextField fx:id="code" alignment="CENTER" layoutX="289.0" layoutY="267.0" maxWidth="359.0" minWidth="151.0" onInputMethodTextChanged="#checkCode" prefHeight="86.0" prefWidth="161.0" promptText="XXXXX">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="confirmButton" layoutX="229.0" layoutY="424.0" onAction="#confirmAccount" prefHeight="44.0" prefWidth="289.0" text="Confimer votre compte">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="errorLabel2" layoutX="454.0" layoutY="363.0" onMousePressed="#generateAnotherCode" prefHeight="17.0" prefWidth="143.0" text="nouveau code ?" textFill="#f50000" visible="false">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel1" alignment="CENTER" contentDisplay="CENTER" layoutX="143.0" layoutY="363.0" prefHeight="26.0" prefWidth="311.0" text="Code incorrecte, voullez vous générer un " textAlignment="CENTER" textFill="#f50000" visible="false">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

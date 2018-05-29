@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="992.0" xmlns="http://javafx.com/javafx/8.0.162" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.UserAdminChartController">
+   <children>
+      <BarChart fx:id="inscriChart" layoutX="29.0" layoutY="275.0" prefHeight="314.0" prefWidth="438.0" style="-fx-background-color: white;" title="Inscription">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <LineChart fx:id="pubChart" layoutX="525.0" layoutY="275.0" prefHeight="314.0" prefWidth="438.0" style="-fx-background-color: white;" title="Publication ">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <JFXButton fx:id="userButton" buttonType="RAISED" layoutX="29.0" layoutY="14.0" onAction="#fireUserAdminUI" prefHeight="117.0" prefWidth="240.0" style="-fx-background-color: #336E7B;" text="Utilisateur" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@Assets/icons/icons8-utilisateur-sexe-neutre-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="pubButton" alignment="CENTER" buttonType="RAISED" layoutX="298.0" layoutY="14.0" prefHeight="117.0" prefWidth="240.0" style="-fx-background-color: #FABE58;" text="Publication" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Assets/icons/icons8-utilisateur-sexe-neutre-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="reportedButton" alignment="CENTER" buttonType="RAISED" layoutX="566.0" layoutY="14.0" onAction="#fireReportedUser" prefHeight="117.0" prefWidth="240.0" style="-fx-background-color: #336E7B;" text="Signalé" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Assets/icons/icons8-utilisateur-sexe-neutre-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

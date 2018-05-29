@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="425.0" prefWidth="889.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Covoiturage.PageAcceuilController">
+    <children>
+        <Label layoutX="208.0" layoutY="34.0" text="Covoiturage">
+            <font>
+                <Font name="System Bold" size="34.0" />
+            </font>
+        </Label>
+        <Button fx:id="deposer" layoutX="75.0" layoutY="208.0" mnemonicParsing="false" onAction="#deposer" prefHeight="52.0" prefWidth="184.0" text="Deposer votre covoiturage" />
+        <Button fx:id="afficher" layoutX="350.0" layoutY="208.0" mnemonicParsing="false" onAction="#afficher" prefHeight="53.0" prefWidth="196.0" text="Consulter les covoiturage" />
+    </children>
+</AnchorPane>

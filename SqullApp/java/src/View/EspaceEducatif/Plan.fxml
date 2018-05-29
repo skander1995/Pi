@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.EspaceEducatif.Plan">
+   <children>
+      <ScrollPane>
+         <content>
+            <AnchorPane id="AnchorPane" fx:id="anchor2" prefHeight="500.0" prefWidth="700.0">
+               <children>
+                  <TableView fx:id="TabCom" editable="true" layoutX="74.0" layoutY="144.0" prefHeight="269.0" prefWidth="427.0">
+                    <columns>
+                        <TableColumn fx:id="nom" prefWidth="75.0" text="Nom" />
+                        <TableColumn fx:id="prenom" prefWidth="75.0" text="Prenom" />
+                        <TableColumn fx:id="commentaire" prefWidth="330.0" text="Commentaire" />
+                    </columns>
+                  </TableView>
+                  <ImageView fx:id="star1" fitHeight="49.0" fitWidth="48.0" layoutX="122.0" layoutY="15.0" onMouseClicked="#ClickStar1">
+                     <image>
+                        <Image url="@StarEmpty.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star2" fitHeight="49.0" fitWidth="48.0" layoutX="179.0" layoutY="16.0" onMouseClicked="#ClickStar2">
+                     <image>
+                        <Image url="@StarEmpty.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star4" fitHeight="49.0" fitWidth="48.0" layoutX="296.0" layoutY="15.0" onMouseClicked="#ClickStar4">
+                     <image>
+                        <Image url="@StarEmpty.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star3" fitHeight="49.0" fitWidth="48.0" layoutX="239.0" layoutY="16.0" onMouseClicked="#ClickStar3">
+                     <image>
+                        <Image url="@StarEmpty.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star5" fitHeight="49.0" fitWidth="48.0" layoutX="353.0" layoutY="16.0" onMouseClicked="#ClickStar5">
+                     <image>
+                        <Image url="@StarEmpty.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="evaluer" layoutX="217.0" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#ClickEvaluer" prefHeight="35.0" prefWidth="159.0" text="Noter" />
+                  <ImageView fx:id="Est1" fitHeight="49.0" fitWidth="48.0" layoutX="124.0" layoutY="16.0" onMouseClicked="#STAR1" visible="false">
+                     <image>
+                        <Image url="@StarFilled.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Est2" fitHeight="49.0" fitWidth="48.0" layoutX="179.0" layoutY="16.0" onMouseClicked="#STAR2" visible="false">
+                     <image>
+                        <Image url="@StarFilled.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Est5" fitHeight="49.0" fitWidth="48.0" layoutX="353.0" layoutY="16.0" onMouseClicked="#STAR5" visible="false">
+                     <image>
+                        <Image url="@StarFilled.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Est3" fitHeight="49.0" fitWidth="48.0" layoutX="239.0" layoutY="16.0" onMouseClicked="#STAR3" visible="false">
+                     <image>
+                        <Image url="@StarFilled.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Est4" fitHeight="49.0" fitWidth="48.0" layoutX="296.0" layoutY="16.0" onMouseClicked="#STAR4" visible="false">
+                     <image>
+                        <Image url="@StarFilled.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="Commenter" layoutX="431.0" layoutY="427.0" mnemonicParsing="false" onAction="#comPlan" prefHeight="35.0" prefWidth="79.0" text="Commenter" />
+                  <TextField fx:id="ComTXT" layoutX="80.0" layoutY="427.0" prefHeight="35.0" prefWidth="321.0" promptText="Commenter..." />
+                  <Button fx:id="back" layoutX="510.0" layoutY="41.0" mnemonicParsing="false" onAction="#backto" text="retour" />
+                  <TextField fx:id="note_ev" layoutX="407.0" layoutY="29.0" prefHeight="25.0" prefWidth="49.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

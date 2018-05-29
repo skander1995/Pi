@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.colocation.AccueilColocationController">
+   <children>
+      <Label layoutX="223.0" layoutY="27.0" text="Colocation">
+         <font>
+            <Font name="Bell MT Italic" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="AfficherC" layoutX="322.0" layoutY="157.0" mnemonicParsing="false" onAction="#afficherC" prefHeight="43.0" prefWidth="193.0" text="Consulter les offres de colocation" />
+      <Button fx:id="ajouterC" layoutX="65.0" layoutY="157.0" mnemonicParsing="false" onAction="#addCo" prefHeight="43.0" prefWidth="182.0" text="Ajouter une offre de colocation" />
+      <Button fx:id="retour" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#Retounrer" prefHeight="34.0" prefWidth="153.0" text="Retour au Menu principal" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="127.0" xmlns="http://javafx.com/javafx/8.0.162" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PopOverPrintController">
+   <children>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="-10.0" layoutY="14.0" onAction="#generatePdf" prefHeight="80.0" prefWidth="137.0">
+         <graphic>
+            <ImageView fitHeight="73.0" fitWidth="114.0" onMouseClicked="#generatePdf" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@View/Assets/icons/icons8-pdf-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="-5.0" layoutY="105.0" onAction="#generateExcel" prefHeight="80.0" prefWidth="137.0">
+         <graphic>
+            <ImageView fitHeight="73.0" fitWidth="114.0" onMouseClicked="#generateExcel" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@View/Assets/icons/icons8-ms-excel-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

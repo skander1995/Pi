@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.evenement.AfficherEvenementsController">
+   <children>
+      <TableView fx:id="table" layoutX="42.0" layoutY="113.0" onMouseClicked="#popUp" prefHeight="241.0" prefWidth="723.0">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="91.0" text="Nom" />
+          <TableColumn fx:id="desc" prefWidth="195.0" text="Description" />
+            <TableColumn fx:id="lieu" minWidth="1.0" prefWidth="95.0" text="Lieu" />
+            <TableColumn fx:id="dated" prefWidth="102.0" text="Date début" />
+            <TableColumn fx:id="datef" prefWidth="102.0" text="Date fin" />
+            <TableColumn fx:id="participation" prefWidth="137.0" text="Participation" />
+        </columns>
+      </TableView>
+      <TextField fx:id="chercheField" layoutX="42.0" layoutY="77.0" onKeyReleased="#chercher" promptText="Chercher" />
+      <Button fx:id="participer" layoutX="254.0" layoutY="74.0" mnemonicParsing="false" onAction="#participer" prefHeight="32.0" prefWidth="91.0" text="Participer" />
+   </children>
+</AnchorPane>

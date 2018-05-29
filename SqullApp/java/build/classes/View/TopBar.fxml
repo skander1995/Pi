@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.162" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.TopBarController">
+    <children>
+        <JFXButton fx:id="chat" contentDisplay="TOP" onAction="#loadAcceuil" prefHeight="42.0" prefWidth="192.0" stylesheets="@/View/Assets/css/slidebar.css" text="Acceuil">
+            <graphic>
+                <ImageView fx:id="acceuilButton" fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/View/Assets/icons/icons8-accueil-96.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="publicationButton" contentDisplay="TOP" onAction="#loadPublier" prefHeight="41.0" prefWidth="191.0" stylesheets="@/View/Assets/css/slidebar.css" text="Publier">
+            <graphic>
+                <ImageView fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/View/Assets/icons/register_purple.png" />
+               </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="profileButton" contentDisplay="TOP" onAction="#loadProfil" prefHeight="41.0" prefWidth="191.0" stylesheets="@/View/Assets/css/slidebar.css" text="Mon profil">
+            <graphic>
+                <ImageView fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/View/Assets/icons/icons8-utilisateur-sexe-neutre-64.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="faqButton" contentDisplay="TOP" onMouseClicked="#loadFaq" prefHeight="46.0" prefWidth="191.0" stylesheets="@/View/Assets/css/slidebar.css" text="Consulter Publications">
+            <graphic>
+                <ImageView fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/View/Assets/icons/help-circle.png" />
+               </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="contactButton" contentDisplay="TOP" onAction="#loadContact" prefHeight="40.0" prefWidth="192.0" stylesheets="@/View/Assets/css/slidebar.css" text="Contaztez nous" wrapText="true">
+            <graphic>
+                <ImageView fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/View/Assets/icons/icon-lg-contact-blue1.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+        <JFXButton fx:id="logoutButton" contentDisplay="TOP" onAction="#exitSoftware" prefHeight="44.0" prefWidth="192.0" stylesheets="@/View/Assets/css/slidebar.css" text="Déconnecter">
+            <graphic>
+                <ImageView fitHeight="42.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/View/Assets/icons/Door-Exit-Sign-Out-128.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </JFXButton>
+    </children>
+</HBox>

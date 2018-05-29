@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="664.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.162" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.UserAdminPanelController">
+   <children>
+      <JFXTextField fx:id="searchField" layoutX="501.0" layoutY="81.0" promptText="Search" AnchorPane.rightAnchor="14.0" />
+      <TableView fx:id="userData" layoutX="14.0" layoutY="120.0" prefHeight="374.0" prefWidth="636.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="120.0" />
+      <JFXComboBox fx:id="userTypeCombo" layoutX="14.0" layoutY="84.0" onAction="#comboFilter" prefHeight="25.0" prefWidth="166.0" promptText="Tous" AnchorPane.leftAnchor="14.0" />
+      <JFXButton fx:id="printButton" contentDisplay="GRAPHIC_ONLY" layoutX="566.0" layoutY="14.0" onAction="#popPopUp" prefHeight="55.0" prefWidth="84.0" AnchorPane.rightAnchor="14.0">
+         <graphic>
+            <ImageView fitHeight="47.0" fitWidth="66.0" onMouseClicked="#popPopUp" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Assets/icons/icons8-impression-80.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="120.0" layoutY="14.0" prefHeight="55.0" prefWidth="84.0">
+         <graphic>
+            <ImageView fitHeight="47.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

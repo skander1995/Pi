@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.162" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.EspaceEducatif.SelectController">
+   <children>
+      <TableView fx:id="table" layoutX="39.0" layoutY="94.0" onMouseClicked="#fill" prefHeight="285.0" prefWidth="524.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="94.0">
+         <columns>
+            <TableColumn fx:id="Date" prefWidth="117.0" text="Date" />
+            <TableColumn fx:id="Description" prefWidth="108.0" text="Description" />
+            <TableColumn fx:id="Document" prefWidth="149.0" text="Document" />
+            <TableColumn fx:id="Matiére" minWidth="0.0" prefWidth="147.0" text="Matiére" />
+         </columns>
+      </TableView>
+      <Button fx:id="refrech" layoutX="249.0" layoutY="379.0" mnemonicParsing="false" onAction="#refr" onMouseClicked="#refrech" prefHeight="39.0" prefWidth="129.0" text="AJOUTER" />
+      <TextField fx:id="chercheField" layoutX="425.0" layoutY="14.0" promptText="chercher" AnchorPane.topAnchor="14.0" />
+      <Label layoutX="39.0" layoutY="41.0" text="Mes Publications">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="login" editable="false" layoutX="617.0" layoutY="94.0" promptText="Description" text="Login user" AnchorPane.rightAnchor="14.0" />
+      <TextField fx:id="descri" editable="false" layoutX="611.0" layoutY="172.0" promptText="Description" AnchorPane.rightAnchor="14.0" />
+      <TextField fx:id="mat" editable="false" layoutX="611.0" layoutY="308.0" promptText="Matiére" AnchorPane.rightAnchor="20.0" />
+      <Label layoutX="583.0" layoutY="236.0" text="Document" AnchorPane.rightAnchor="141.0" />
+      <Button fx:id="download" layoutX="640.0" layoutY="268.0" mnemonicParsing="false" onAction="#download" text="Download" AnchorPane.rightAnchor="69.0" />
+      <TextField fx:id="doc" layoutX="668.0" layoutY="232.0" prefHeight="25.0" prefWidth="94.0" AnchorPane.rightAnchor="14.0" />
+   </children>
+</AnchorPane>

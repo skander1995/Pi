@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor1" prefHeight="443.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.colocation.Colocation_afficherController">
+   <children>
+      <TableView fx:id="table" layoutX="78.0" layoutY="78.0" onMouseClicked="#go" prefHeight="259.0" prefWidth="519.0">
+        <columns>
+          <TableColumn fx:id="titre" prefWidth="66.0" text="Titre" />
+            <TableColumn fx:id="datedisponibilite" prefWidth="120.0" text="Date disponibilité" />
+            <TableColumn fx:id="lieu" prefWidth="69.0" text="Lieu " />
+            <TableColumn fx:id="loyer" prefWidth="66.0" text="Loyer (DT)" />
+            <TableColumn fx:id="description" prefWidth="79.0" text="Description" />
+          <TableColumn fx:id="datepublication" prefWidth="118.0" text="Date publication" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="lieuc" layoutX="195.0" layoutY="22.0" prefWidth="150.0" promptText="Choisir un lieu " />
+      <Button fx:id="chercher" layoutX="406.0" layoutY="22.0" mnemonicParsing="false" onAction="#chercher" text="Chercher" />
+      <Button fx:id="supprimer" layoutX="604.0" layoutY="134.0" mnemonicParsing="false" onAction="#del" text="Supprimer" />
+      <Button fx:id="modifier" layoutX="610.0" layoutY="245.0" mnemonicParsing="false" onAction="#changer" text="Modifier" />
+      <Button fx:id="retour" layoutX="27.0" layoutY="387.0" mnemonicParsing="false" onAction="#Retourner" text="Retour au menu" />
+      <Button fx:id="stat" layoutX="195.0" layoutY="387.0" mnemonicParsing="false" onAction="#afficheStat" text="Afficher les statistiques par lieux" />
+   </children>
+</AnchorPane>

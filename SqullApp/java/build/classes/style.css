@@ -1,0 +1,240 @@
+#paneimage{
+    -fx-background-image: url("image.jpg");
+
+    
+}#paneimage2{
+    -fx-background-image: url("Slide-artisanat.jpg");
+
+    
+}
+#paneimage3{
+    -fx-background-image: url("artisanat3.jpg");
+
+    
+}
+#login{
+    
+ -fx-border-radius:7;
+    -fx-background-radius: 7, 7, 7, 7;
+    
+}/*
+.banner {
+    -fx-background-color: #5AC2DD;
+    -fx-background-image: url("SlideHeader-1.png"), url("SlideHeader-2.png");
+    -fx-background-position: left, right;
+    -fx-background-repeat: no-repeat, no-repeat;
+}
+.star-button {
+    -outer-border-color: linear-gradient(from 0% 0% to 100% 100%, goldenrod 0%, darkgoldenrod 100%);
+    -inner-border-color: lightgoldenrodyellow;
+    -fill-color: linear-gradient(from 0% 0% to 100% 100%, lightgoldenrodyellow 0%, yellow 10%, gold 50%, gold 75%, orange 100%);
+    -fill-color: radial-gradient(center 100% 100%, radius 100%, orange 10%, gold 25%, gold 50%, yellow 80%, lightgoldenrodyellow 100%);
+    -fx-shape: "m 330,365.21935 c -6.20565,4.97745 -97.52794,-42.69418 -105.47409,-42.31493 -7.94615,0.37925 -94.31316,56.53157 -100.96465,52.16776 -6.65149,-4.36381 10.46679,-105.9478 7.6506,-113.38785 C 128.39568,254.24429 48.302777,189.4564 50.397583,181.78197 52.49239,174.10753 154.39435,158.9968 160.6,154.01935 c 6.20565,-4.97745 43.07253,-101.170885 51.01868,-101.550136 7.94615,-0.379251 53.80675,91.865796 60.45824,96.229606 6.65149,4.36381 109.52937,9.70089 112.34556,17.14093 2.81618,7.44004 -70.74237,79.56135 -72.83717,87.23579 C 309.4905,260.74997 336.20565,360.2419 330,365.21935 Z";    
+    -fx-background-color: -outer-border-color, -inner-border-color, -fill-color;
+    -fx-background-insets: 0px, 5px, 10px;
+}
+.star-button:hover {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+.star-button:focused {
+    -outer-border-color: cornflowerblue;
+}*/
+
+.text-field{
+	-fx-background-color: transparent;
+	-fx-text-box-border: transparent;
+	-fx-focus-color: transparent;
+      
+    -fx-border-radius:7;
+    -fx-background-radius: 7, 7, 7, 7;
+    -fx-padding: 0.166667em;
+}
+
+.text-field:hover
+{
+    -fx-background-color: white;
+     -fx-background-radius: 7, 7, 7, 7;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+    -fx-padding: 0.166667em;
+}
+
+.text-field:focused
+{
+    -fx-background-color: #009EF;
+     -fx-background-radius: 7, 7, 7, 7;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+    -fx-padding: 0.166667em;
+}
+ 
+
+.button {
+    -fx-background-color:#F0E68C ;
+    -fx-background-radius:7;
+    -fx-border-radius:7;
+    -fx-border-color:transparent;
+    -fx-border-width: 0 3 3 0;
+}
+
+.button:hover {
+    -fx-background-color:#FFFFF0;
+    -fx-background-radius:7;
+    -fx-border-radius:7;
+    -fx-border-width: 0 3 3 0;
+}
+.combo-box .list-cell 
+{
+    -fx-background: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+}
+
+.combo-box-popup .list-view 
+{
+    -fx-background-color: white, white;
+    -fx-background-insets: 0, 1;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}    
+
+.combo-box-popup .list-view .list-cell 
+{
+    -fx-padding: 4 0 4 5;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+    /* No alternate highlighting */
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover 
+{
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+    -fx-text-fill: -fx-selection-bar-text;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: white;
+    -fx-text-fill: -fx-text-inner-color;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+}
+
+.combo-box-base  
+{
+    -fx-skin: "com.sun.javafx.scene.control.skin.ComboBoxBaseSkin";
+    -fx-background-color: white, white, white, white;
+    -fx-background-radius: 5, 5, 4, 3;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-padding: 0;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+}
+
+.combo-box-base:hover
+{
+    -fx-color: -fx-hover-base;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+}
+
+.combo-box-base:showing 
+{
+    -fx-color: -fx-pressed-base;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+}
+
+.combo-box-base:focused {
+    -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-radius: 6.4, 4, 5, 3;
+    -fx-background-insets: -1.4, 0, 1, 2;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+}
+
+.combo-box-base:disabled {
+    -fx-opacity: .4;
+     -fx-background-radius:7;
+    -fx-border-radius:7;
+}
+#Catalogeus {
+    -fx-background-color:#FF6347 
+    
+}
+#Boutiques {
+    -fx-background-color:#87CEEB 
+    
+}
+#Panier {
+    -fx-background-color: #2E8B57 
+    
+}
+#Promotion {
+    -fx-background-color:  #708090 
+    
+}
+#espClient {
+    -fx-background-color:   #F4A460 
+    
+}
+#espVendeur {
+    -fx-background-color:    #FFF5EE 
+    
+}
+#espAdmin {
+    -fx-background-color:     #5F9EA0 
+    
+}/*
+.table-view {
+    -fx-table-header-border-color: transparent;
+    -fx-table-cell-border-color: -fx-box-border;  
+    -fx-background-color: transparent;
+}
+
+.table-view .filler, .table-view .column-header
+{
+    -fx-size: 40;
+    -fx-border-style: null;
+    -fx-border-color: rgb(200.0, 200.0, 200.0);
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+}
+.table-view .show-hide-columns-button
+{
+    -fx-background-color: transparent;
+}*/
+
+.table-view .column-header .label,.table-view .column-drag-header .label
+{
+    -fx-alignment: CENTER_LEFT;
+}
+/*
+.table-view .column-header-background
+{
+    -fx-background-color:  #ffffff;
+}
+*/
+.table-view:focused{
+	-fx-background-color:transparent;
+}
+/*
+.table-row-cell:odd{
+	-fx-background-color: #ffffff;
+	-fx-background-insets: 0,0 0 1 0;
+}
+.table-row-cell:even{
+	-fx-background-color:#000000;
+	-fx-background-color: 0,0 0 1 0;
+}
+*/

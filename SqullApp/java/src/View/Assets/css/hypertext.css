@@ -1,0 +1,7 @@
+.fancytext {
+    -fx-font: 14 Tahoma ;
+    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
+    -fx-stroke: yellow;
+    -fx-stroke-width: 1;
+    -fx-underline: true;
+}

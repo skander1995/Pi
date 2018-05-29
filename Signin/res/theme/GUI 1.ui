@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="GUI 1" cloudDestinationProperty="GUI 1" title="hello" >
+<command name="2222" id="2" action="" backCommand="false" /><command name="111" id="1" action="" backCommand="false" /></component>

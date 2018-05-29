@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="SkullApp.jnlp">
+  <information>
+    <title>SkullApp</title>
+    <vendor>cobwi</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="SkullApp.jar" size="1067891" download="eager" />
+    <jar href="lib\CodeNameOneFileUploader.jar" size="4584" download="eager" />
+    <jar href="lib\GMapsFX-2.0.9.jar" size="166541" download="eager" />
+    <jar href="lib\controlsfx-8.40.14.jar" size="1215643" download="eager" />
+    <jar href="lib\fontawesomefx-8.1.jar" size="179086" download="eager" />
+    <jar href="lib\itextpdf-5.4.1.jar" size="1898417" download="eager" />
+    <jar href="lib\java-mail-1.4.4.jar" size="494975" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2211776" download="eager" />
+    <jar href="lib\jxl-2.6.12.jar" size="725735" download="eager" />
+    <jar href="lib\jxls-2.3.0.jar" size="112773" download="eager" />
+    <jar href="lib\jxls-core-1.0.6.jar" size="155743" download="eager" />
+    <jar href="lib\jxls-jexcel-1.0.0.jar" size="20727" download="eager" />
+    <jar href="lib\jxls-poi-1.0.11.jar" size="24365" download="eager" />
+    <jar href="lib\jxls-reader-1.0.6 (1).jar" size="34105" download="eager" />
+    <jar href="lib\jxls-reader-1.0.6.jar" size="34105" download="eager" />
+    <jar href="lib\libphonenumber-8.0.0.jar" size="326861" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="SkullApp" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="squllapp.SqullApp"  name="SkullApp" />
+  <update check="always"/>
+</jnlp>

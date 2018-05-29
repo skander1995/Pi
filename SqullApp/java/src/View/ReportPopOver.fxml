@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/8.0.162" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ReportPopOverController">
+   <children>
+      <ImageView layoutX="179.0" layoutY="14.0">
+         <image>
+            <Image url="@/View/Assets/icons/icons8-attention-100.png" />
+         </image>
+      </ImageView>
+      <JFXComboBox fx:id="comboTypeSignale" layoutX="16.0" layoutY="128.0" prefHeight="25.0" prefWidth="303.0" />
+      <JFXTextArea fx:id="descSignaler" layoutX="16.0" layoutY="210.0" maxWidth="434.0" minWidth="427.0" prefHeight="108.0" prefWidth="427.0" promptText="Message descriptif" />
+      <JFXButton defaultButton="true" layoutX="322.0" layoutY="331.0" onAction="#submitReport" prefHeight="25.0" prefWidth="121.0" style="-fx-background-color: red;" text="Signaler" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="titleSignaler" layoutX="14.0" layoutY="172.0" maxWidth="341.0" minWidth="303.0" prefHeight="31.0" prefWidth="303.0" promptText="Titre " />
+   </children>
+</AnchorPane>

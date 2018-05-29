@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="9" useXmlUI="false">
+    <image name="all friends.png" type="multi"  />
+    <image name="BackCommand.borderBottom_1.png" type="multi"  />
+    <image name="BackCommand.borderBottomL_1.png" type="multi"  />
+    <image name="BackCommand.borderBottomR_1.png" type="multi"  />
+    <image name="BackCommand.borderCenter_1.png" type="multi"  />
+    <image name="BackCommand.borderLeft_1.png" type="multi"  />
+    <image name="BackCommand.borderRight_1.png" type="multi"  />
+    <image name="BackCommand.borderTop_1.png" type="multi"  />
+    <image name="BackCommand.borderTopL_1.png" type="multi"  />
+    <image name="BackCommand.borderTopR_1.png" type="multi"  />
+    <image name="fbuser.jpg"  />
+    <ui name="GUI 1" />
+    <ui name="GUI 2" />
+    <image name="Image 1"  />
+    <image name="line.png"  />
+    <image name="nav_menu_icon@2x.png" type="multi"  />
+    <image name="SignInFacebook.png_veryHigh.png" type="multi"  />
+    <theme name="Theme 1">
+        <val key="@commandBehavior" value="Side" />
+        <val key="@includeNativeBool" value="true" />
+        <val key="@sideMenuImage" value="nav_menu_icon@2x.png" />
+        <val key="BackCommand.align" value="4" />
+        <border key="BackCommand.border" type="image" i1="BackCommand.borderTop_1.png" i2="BackCommand.borderBottom_1.png" i3="BackCommand.borderLeft_1.png" i4="BackCommand.borderRight_1.png" i5="BackCommand.borderTopL_1.png" i6="BackCommand.borderTopR_1.png" i7="BackCommand.borderBottomL_1.png" i8="BackCommand.borderBottomR_1.png" i9="BackCommand.borderCenter_1.png" />
+        <val key="BackCommand.marUnit" value="2,2,2,0" />
+        <val key="BackCommand.margin" value="1,1,1,0" />
+        <val key="BackCommand.padUnit" value="2,2,2,2" />
+        <val key="BackCommand.padding" value="0,0,2,2" />
+        <val key="BackCommand.press#align" value="4" />
+        <border key="BackCommand.press#border" type="image" i1="BackCommand.borderTop_1.png" i2="BackCommand.borderBottom_1.png" i3="BackCommand.borderLeft_1.png" i4="BackCommand.borderRight_1.png" i5="BackCommand.borderTopL_1.png" i6="BackCommand.borderTopR_1.png" i7="BackCommand.borderBottomL_1.png" i8="BackCommand.borderBottomR_1.png" i9="BackCommand.borderCenter_1.png" />
+        <val key="BackCommand.press#padUnit" value="2,2,2,2" />
+        <val key="BackCommand.press#padding" value="2,2,2,2" />
+        <val key="BackCommand.sel#align" value="4" />
+        <border key="BackCommand.sel#border" type="image" i1="BackCommand.borderTop_1.png" i2="BackCommand.borderBottom_1.png" i3="BackCommand.borderLeft_1.png" i4="BackCommand.borderRight_1.png" i5="BackCommand.borderTopL_1.png" i6="BackCommand.borderTopR_1.png" i7="BackCommand.borderBottomL_1.png" i8="BackCommand.borderBottomR_1.png" i9="BackCommand.borderCenter_1.png" />
+        <val key="BackCommand.sel#padUnit" value="2,2,2,2" />
+        <val key="BackCommand.sel#padding" value="2,2,2,2" />
+        <val key="CenterLabel.align" value="4" />
+        <val key="CenterLabel.press#align" value="4" />
+        <val key="CenterLabel.sel#align" value="4" />
+        <val key="ContentPane.bgColor" value="ffffff" />
+        <gradient key="ContentPane.bgGradient" color1="16777215" color2="16777215" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="ContentPane.bgType" value="0" />
+        <val key="ContentPane.transparency" value="255" />
+        <font key="Header.font" type="system" face="0" style="1" size="16" />
+        <val key="MenuButton.bgImage" value="line.png" />
+        <val key="MenuButton.bgType" value="26" />
+        <border key="MenuButton.border" type="empty" />
+        <val key="MenuButton.margin" value="0,0,0,0" />
+        <val key="MenuButton.padUnit" value="2,2,2,2" />
+        <val key="MenuButton.padding" value="2,2,3,3" />
+        <gradient key="MenuButton.press#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="MenuButton.press#bgType" value="0" />
+        <border key="MenuButton.press#border" type="empty" />
+        <val key="MenuButton.press#margin" value="0,0,0,0" />
+        <val key="MenuButton.press#padUnit" value="2,2,2,2" />
+        <val key="MenuButton.press#padding" value="0,0,3,3" />
+        <val key="MenuButton.press#transparency" value="0" />
+        <gradient key="MenuButton.sel#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="MenuButton.sel#bgType" value="0" />
+        <border key="MenuButton.sel#border" type="empty" />
+        <val key="MenuButton.sel#margin" value="0,0,0,0" />
+        <val key="MenuButton.sel#padUnit" value="2,2,2,2" />
+        <val key="MenuButton.sel#padding" value="0,0,3,3" />
+        <val key="MenuButton.sel#transparency" value="0" />
+        <val key="MenuButton.transparency" value="0" />
+        <val key="Separator.align" value="1" />
+        <val key="Separator.fgColor" value="999999" />
+        <font key="Separator.font" type="system" face="0" style="0" size="8" />
+        <val key="Separator.marUnit" value="0,2,0,2" />
+        <val key="Separator.margin" value="0,0,2,2" />
+        <val key="Separator.padUnit" value="2,2,2,2" />
+        <val key="Separator.padding" value="2,2,2,2" />
+        <val key="Title.align" value="4" />
+        <gradient key="Title.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="Title.bgType" value="0" />
+        <border key="Title.border" type="empty" />
+        <val key="Title.fgColor" value="ffffff" />
+        <val key="Title.padUnit" value="2,0,2,0" />
+        <val key="Title.padding" value="2,2,0,0" />
+        <val key="Title.transparency" value="0" />
+        <val key="TitleArea.align" value="4" />
+        <val key="TitleArea.bgColor" value="ff6600" />
+        <val key="TitleArea.bgImage" value="line.png" />
+        <val key="TitleArea.bgType" value="30" />
+        <border key="TitleArea.border" type="empty" />
+        <val key="TitleArea.fgColor" value="ffffff" />
+        <val key="TitleArea.margin" value="0.0,0.0,0.0,0.0" />
+        <val key="TitleArea.padUnit" value="2,0,2,0" />
+        <val key="TitleArea.padding" value="0.0,0.0,0.0,0.0" />
+        <val key="TitleArea.transparency" value="0" />
+        <val key="TouchCommand.align" value="1" />
+        <gradient key="TouchCommand.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TouchCommand.bgType" value="0" />
+        <border key="TouchCommand.border" type="empty" />
+        <val key="TouchCommand.fgColor" value="ffffff" />
+        <font key="TouchCommand.font" type="system" face="0" style="1" size="0" />
+        <val key="TouchCommand.marUnit" value="0,2,0,2" />
+        <val key="TouchCommand.margin" value="0,0,2,2" />
+        <val key="TouchCommand.padUnit" value="2,2,2,2" />
+        <val key="TouchCommand.padding" value="2,2,2,2" />
+        <val key="TouchCommand.press#align" value="1" />
+        <gradient key="TouchCommand.press#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TouchCommand.press#bgType" value="0" />
+        <border key="TouchCommand.press#border" type="empty" />
+        <val key="TouchCommand.press#fgColor" value="ffffff" />
+        <font key="TouchCommand.press#font" type="system" face="0" style="1" size="0" />
+        <val key="TouchCommand.press#marUnit" value="0,2,0,2" />
+        <val key="TouchCommand.press#margin" value="0,0,2,2" />
+        <val key="TouchCommand.press#padUnit" value="2,2,2,2" />
+        <val key="TouchCommand.press#padding" value="2,2,2,2" />
+        <val key="TouchCommand.press#textDecoration" value="0" />
+        <val key="TouchCommand.press#transparency" value="0" />
+        <val key="TouchCommand.sel#align" value="1" />
+        <gradient key="TouchCommand.sel#bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
+        <val key="TouchCommand.sel#bgType" value="0" />
+        <border key="TouchCommand.sel#border" type="empty" />
+        <val key="TouchCommand.sel#fgColor" value="ffffff" />
+        <font key="TouchCommand.sel#font" type="system" face="0" style="1" size="0" />
+        <val key="TouchCommand.sel#marUnit" value="0,2,0,2" />
+        <val key="TouchCommand.sel#margin" value="0,0,2,2" />
+        <val key="TouchCommand.sel#padUnit" value="2,2,2,2" />
+        <val key="TouchCommand.sel#padding" value="2,2,2,2" />
+        <val key="TouchCommand.sel#textDecoration" value="0" />
+        <val key="TouchCommand.sel#transparency" value="0" />
+        <val key="TouchCommand.textDecoration" value="0" />
+        <val key="TouchCommand.transparency" value="0" />
+        <val key="fgColor" value="0" />
+        <val key="transparency" value="0" />
+    </theme>
+</resource>
