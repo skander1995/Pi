@@ -1,0 +1,39 @@
+admin_aide:
+    path:  /
+    defaults: { _controller: "EducBundle:Aide:index" }
+
+admin_aide_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "EducBundle:Aide:sort" }
+    requirements: { type: ASC|DESC }
+
+admin_aide_show:
+    path:  /{id}/show
+    defaults: { _controller: "EducBundle:Aide:show" }
+
+admin_aide_new:
+    path:  /new
+    defaults: { _controller: "EducBundle:Aide:new" }
+
+admin_aide_create:
+    path:  /create
+    defaults: { _controller: "EducBundle:Aide:create" }
+    requirements: { method: post }
+
+admin_aide_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "EducBundle:Aide:edit" }
+
+admin_aide_update:
+    path:  /{id}/update
+    defaults: { _controller: "EducBundle:Aide:update" }
+    requirements: { method: post|put }
+
+admin_aide_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "EducBundle:Aide:delete" }
+    requirements: { method: post|delete }
+
+all_mob:
+    path:     /tasks/all
+    defaults: { _controller: EducBundle:Educ:Allmob}

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from thunder-team.com/friend-finder/index-register.html.twig by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 18 Mar 2018 18:01:10 GMT -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is social network html5 template available in themeforest......"/>
+    <meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page"/>
+    <meta name="robots" content="index, follow"/>
+    <title>Friend Finder | A Complete Social Network Template</title>
+
+    <!-- Stylesheets
+    ================================================= -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"/>
+
+    <!--Google Font-->
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i') }}" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/fav.png') }}"/>
+</head>
+<body>
+
+<!-- Header
+================================================= -->
+<header id="header-inverse">
+    <nav class="navbar navbar-default navbar-fixed-top menu">
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ asset('index-register.html.twig') }}">
+                    <img src="{{ asset('images/logo.png') }}" alt="logo"/></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right main-menu">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            Home
+                            <span>
+                            <img src="{{ asset('images/down-arrow.png') }}" alt=""/>
+                        </span>
+                        </a>
+                        <ul class="dropdown-menu newsfeed-home">
+                            <li><a href="{{ asset('index.html') }}">Landing Page 1</a></li>
+                            <li><a href="{{ asset('index-register.html.twig') }}">Landing Page 2</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Newsfeed <span>
+                                <img src="{{ asset('images/down-arrow.png') }}"
+                                     alt=""/></span></a>
+                        <ul class="dropdown-menu newsfeed-home">
+                            <li><a href="{{ asset('newsfeed.html') }}">Newsfeed</a></li>
+                            <li><a href="{{ asset('newsfeed-people-nearby.html') }}">Poeple Nearly</a></li>
+                            <li><a href="{{ asset('newsfeed-friends.html') }}">My friends</a></li>
+                            <li><a href="{{ asset('newsfeed-messages.html') }}">Chatroom</a></li>
+                            <li><a href="{{ asset('newsfeed-images.html') }}">Images</a></li>
+                            <li><a href="{{ asset('newsfeed-videos.html') }}">Videos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href=" #" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true"
+                           aria-expanded="false">Timeline <span><img src="{{ asset('images/down-arrow.png') }}"
+                                                                     alt=""/></span></a>
+                        <ul class="dropdown-menu login">
+                            <li><a href="{{ asset('timeline.html') }}">Timeline</a></li>
+                            <li><a href="{{ asset('timeline-about.html') }}">Timeline About</a></li>
+                            <li><a href="{{ asset('timeline-album.html') }}">Timeline Album</a></li>
+                            <li><a href="{{ asset('timeline-friends.html') }}">Timeline Friends</a></li>
+                            <li><a href="{{ asset('edit-profile-basic.html') }}">Edit: Basic Info</a></li>
+                            <li><a href="{{ asset('edit-profile-work-edu.html') }}">Edit: Work</a></li>
+                            <li><a href="{{ asset('edit-profile-interests.html') }}">Edit: Interests</a></li>
+                            <li><a href="{{ asset('edit-profile-settings.html') }}">Account Settings</a></li>
+                            <li><a href="{{ asset('edit-profile-password.html') }}">Change Password</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href=" #" class="dropdown-toggle pages" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">All Pages <span><img
+                                        src="{{ asset('images/down-arrow.png') }}"
+                                        alt=""/></span></a>
+                        <ul class="dropdown-menu page-list">
+                            <li><a href="{{ asset('index.html') }}">Landing Page 1</a></li>
+                            <li><a href="{{ asset('index-register.html.twig') }}">Landing Page 2</a></li>
+                            <li><a href="{{ asset('newsfeed.html') }}">Newsfeed</a></li>
+                            <li><a href="{{ asset('newsfeed-people-nearby.html') }}">Poeple Nearly</a></li>
+                            <li><a href="{{ asset('newsfeed-friends.html') }}">My friends</a></li>
+                            <li><a href="{{ asset('newsfeed-messages.html') }}">Chatroom</a></li>
+                            <li><a href="{{ asset('newsfeed-images.html') }}">Images</a></li>
+                            <li><a href="{{ asset('newsfeed-videos.html') }}">Videos</a></li>
+                            <li><a href="{{ asset('timeline.html') }}">Timeline</a></li>
+                            <li><a href="{{ asset('timeline-about.html') }}">Timeline About</a></li>
+                            <li><a href="{{ asset('timeline-album.html') }}">Timeline Album</a></li>
+                            <li><a href="{{ asset('timeline-friends.html') }}">Timeline Friends</a></li>
+                            <li><a href="{{ asset('edit-profile-basic.html') }}">Edit Profile</a></li>
+                            <li><a href="{{ asset('contact.html') }}">Contact Us</a></li>
+                            <li><a href="{{ asset('faq.html') }}">FAQ Page</a></li>
+                            <li><a href="{{ asset('404.html') }}">404 Not Found</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="{{ asset('contact.html') }}">Contact</a></li>
+                </ul>
+                <form class="navbar-form navbar-right hidden-sm">
+                    <div class="form-group">
+                        <i class="icon ion-android-search"></i>
+                        <input type="text" class="form-control" placeholder="Search friends, photos, videos">
+                    </div>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+</header>
+<!--Header End-->
+
+<!-- Landing Page Contents
+================================================= -->
+<div id="lp-register">
+    <div class="container wrapper">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="intro-texts">
+                    <h1 class="text-white">Make Cool Friends !!!</h1>
+                    <p>Friend Finder is a social network template that can be used to connect people. The template
+                        offers Landing pages, News Feed, Image/Video Feed, Chat Box, Timeline and lot more. <br/> <br/>Why
+                        are you waiting for? Buy it now.</p>
+                    <button class="btn btn-primary">Learn More</button>
+                </div>
+            </div>
+            <div class="col-sm-6 col-sm-offset-1">
+                <div class="reg-form-container">
+
+                    <!-- Register/Login Tabs-->
+                    <div class="reg-options">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#register" id="registerButton" data-toggle="tab">Register</a>
+                            </li>
+                            <li><a href="#login" id="loginButton" data-toggle="tab">Login</a></li>
+                        </ul><!--Tabs End-->
+                    </div>
+
+                    <!--Registration Form Contents-->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="register">
+                            <h3>Register Now !!!</h3>
+                            <p class="text-muted">Be cool and join today. Meet millions</p>
+
+                            <!--Register Form returned by ajax here-->
+
+                            <div class="tab-pane" id="form_register_container">
+
+                            </div>
+
+                            <br>
+                            <br>
+                            <!--Register Now Form Ends-->
+                            <p><a id="alreadyButton">Already have an account?</a></p>
+                        </div><!--Registration Form Contents Ends-->
+
+
+                        <div class="tab-pane" id="login">
+                            <h3>Login</h3>
+                            <p class="text-muted">Log into your account</p>
+                            {% trans_default_domain 'FOSUserBundle' %}
+
+                            {% block fos_user_content %}
+                                {% if error %}
+                                    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                {% endif %}
+
+                                <form action="{{ path("fos_user_security_check") }}" method="post">
+                                    <div class="row">
+                                        <div class="form-group col-xs-12">
+                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+                                            <label for="username" class="sr-only">Username </label>
+                                            <input class="form-control input-group-lg" type="text" id="username"
+                                                   name="_username" value="{{ last_username }}" required="required"
+                                                   autocomplete="username" placeholder="Login"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-xs-12">
+                                            <label for="password" class="sr-only">password</label>
+                                            <input class="form-control input-group-lg" type="password" id="password"
+                                                   name="_password" required="required" autocomplete="current-password"
+                                                   placeholder="Mot de passe"/>
+
+                                            <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                                            <label for="remember_me"> Se Souvenir de moi</label>
+                                        </div>
+                                    </div>
+                                    <input class="btn btn-primary" type="submit" id="_submit" name="_submit"
+                                           value="Login Now"/>
+                                    <p><a href="#">Forgot Password?</a></p>
+                                </form>
+
+                            {% endblock fos_user_content %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-6">
+
+                <!--Social Icons-->
+                <ul class="list-inline social-icons">
+                    <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="icon ion-social-googleplus"></i></a></li>
+                    <li><a href="#"><i class="icon ion-social-pinterest"></i></a></li>
+                    <li><a href="#"><i class="icon ion-social-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--preloader-->
+<div id="spinner-wrapper">
+    <div class="spinner"></div>
+</div>
+
+<!-- Scripts ================================================= -->
+<script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.appear.min.js') }}"></script>
+<script src="{{ asset('js/jquery.incremental-counter.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+
+<script>
+
+    $("#registerButton").click(
+        function () {
+            if (pressed) {
+                $.ajax({
+                    type: "POST",
+                    url: "{{ path('fos_user_registration_register') }}",
+                    //data: DATA,
+                    success: function (data) {
+
+                        form = $(data).find("form");
+                        data = $(form).unwrap("form");
+                        //console.log(form);
+                        console.log(data);
+                        var last_user_name = data.last_username == null ? "" : data.last_username;
+                        $("#form_register_container").html(data);
+                        pressed = true;
+                    },
+                    error: function () {
+                        console.log("errrrrrrrrrrr");
+                    }
+                })
+            }
+        }
+    )
+
+    //fos_user_registration_form_plainPassword_first
+    $("#fos_user_registration_form_plainPassword_second").focusout(function () {
+            zwei = $("#fos_user_registration_form_plainPassword_second").val();
+            console.log(zwei);
+            console.log(zwei.length);
+            if (zwei.length != 0) {
+                eins = $("#fos_user_registration_form_plainPassword_first").val();
+                if (eins != zwei) {
+                    $('#error').remove();
+                    $("#fos_user_registration_form_plainPassword_second").parent().append("<label class='control-label' id ='error'>Verifier votre mot de passe</label>");
+                    $("#fos_user_registration_form_plainPassword_first").parent().addClass("has-error");
+                    $("#fos_user_registration_form_plainPassword_second").parent().addClass("has-error");
+                } else {
+                    $('#error').remove();
+                    $("#fos_user_registration_form_plainPassword_first").parent().removeClass("has-error");
+                    $("#fos_user_registration_form_plainPassword_second").parent().removeClass("has-error");
+                }
+            }
+        }
+    );
+
+    //check existing LOGIN
+    $("#fos_user_registration_form_username").focusout(function () {
+            if ($("#fos_user_registration_form_username").val().length > 0) {
+                var DATA = 'username=' + $("#fos_user_registration_form_username").val();
+                //fos_user_registration_form_username
+                console.log(DATA);
+                $.ajax({
+                    type: "get",
+                    url: "{{ path('fos_user_registration_check_username') }}",
+                    data: DATA,
+                    success: function (data) {
+
+                        console.log(data);
+                        if (data.response == "false") {
+                            // prompt error , already exist
+                            $('#usererror').remove();
+                            $("#fos_user_registration_form_username").parent().append("<label class='control-label' id='usererror'>Déjà Existant</label>");
+                            $("#fos_user_registration_form_username").parent().addClass("has-error");
+
+                        } else {
+                            // remove error anyway
+                            $('#usererror').remove();
+                            $("#fos_user_registration_form_username").parent().removeClass("has-error");
+                            //   $("#fos_user_registration_form_username").parent().removeClass("has-error");
+                        }
+                    },
+                    error: function () {
+                        console.log("Check Service unavailable");
+                    }
+                })
+            }
+        }
+    )
+
+    $(document).ready(function () {
+        activaTab('login');
+    });
+
+    $('#alreadyButton').click(function () {
+        $('#loginButton').trigger("click");
+    });
+
+    function activaTab(tab) {
+        $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+    };
+</script>
+
+
+</body>
+</html>

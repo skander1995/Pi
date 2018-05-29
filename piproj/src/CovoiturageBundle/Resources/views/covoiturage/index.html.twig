@@ -1,0 +1,85 @@
+{% extends "layout/base-layout.html.twig" %}
+{% import "AvanzuAdminThemeBundle:layout:macros.html.twig" as macro %}
+
+{% block title %}{{ '%entity% list'|trans({'%entity%': 'Covoiturage'}, 'admin') }} - {{ parent() }}{% endblock %}
+{% macro thead(name, field, label) %}
+    {% spaceless %}
+        {% set sort = app.session.get('sort.' ~ name) %}
+        {% if sort and sort.field == field %}
+            {% if sort.type == 'DESC' %}
+                <a href="{{ path('admin_covoiturage_sort', {field: field, type: 'ASC'}) }}">{{ label }} <i class="fa fa-sort-down"></i></a>
+            {% elseif sort.type == 'ASC' %}
+                <a href="{{ path('admin_covoiturage_sort', {field: field, type: 'DESC'}) }}">{{ label }} <i class="fa fa-sort-up"></i></a>
+            {% endif %}
+        {% else %}
+            <a href="{{ path('admin_covoiturage_sort', {field: field, type: 'ASC'}) }}">{{ label }} <i class="fa fa-sort"></i></a>
+        {% endif %}
+    {% endspaceless %}
+{% endmacro %}
+
+{% from _self import thead %}
+
+
+
+{% block page_content %}
+    <h1>{{ '%entity% list'|trans({'%entity%': 'Covoiturage'}, 'admin') }}</h1>
+
+    {% include 'CovoiturageBundle:Covoiturage:filter.html.twig' with {form: form} %}
+    
+    <table class="table table-striped table-hover table-bordered records_list">
+        <thead>
+            <tr>
+                <th scope="col">{{ thead('covoiturage', 'id', 'Id') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'idUsr', 'Idusr') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'datepub', 'Datepub') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'description', 'Description') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'etat', 'Etat') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'lieudepart', 'Lieudepart') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'lieuarrive', 'Lieuarrive') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'datedepart', 'Datedepart') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'prix', 'Prix') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'checkpoints', 'Checkpoints') }}</th>
+                <th scope="col">{{ thead('covoiturage', 'nbplace', 'Nbplace') }}</th>
+                <th scope="col">{{ 'Actions'|trans({}, 'admin') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for covoiturage in paginator %}
+                <tr>
+                    <td><a href="{{ path('admin_covoiturage_show', {id: covoiturage.id}) }}">{{ covoiturage.id }}</a></td>
+                    <td>{{ covoiturage.idUsr }}</td>
+                    <td>{% if covoiturage.datepub %}{{ covoiturage.datepub|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ covoiturage.description }}</td>
+                    <td>{{ covoiturage.etat }}</td>
+                    <td>{{ covoiturage.lieudepart }}</td>
+                    <td>{{ covoiturage.lieuarrive }}</td>
+                    <td>{% if covoiturage.datedepart %}{{ covoiturage.datedepart|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ covoiturage.prix }}</td>
+                    <td>{{ covoiturage.checkpoints }}</td>
+                    <td>{{ covoiturage.nbplace }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <a class="btn btn-default btn-sm" href="{{ path('admin_covoiturage_show', {id: covoiturage.id}) }}">
+                                <i class="fa fa-file-o"></i> {{ 'show'|trans({}, 'admin') }}
+                            </a>
+                            <a class="btn btn-default btn-sm" href="{{ path('admin_covoiturage_edit', {id: covoiturage.id}) }}">
+                                <i class="fa fa-edit"></i> {{ 'edit'|trans({}, 'admin') }}
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {{ knp_pagination_render(paginator) }}
+    
+    <ul class="new_entry list-unstyled">
+        <li>
+            <a class="btn btn-info" href="{{ path('admin_covoiturage_new') }}">
+                <i class="fa fa-plus"></i> {{ 'Create a new entry'|trans({}, 'admin') }}
+            </a>
+        </li>
+    </ul>
+    
+{% endblock %}

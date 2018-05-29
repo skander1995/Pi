@@ -1,0 +1,35 @@
+admin_covoiturage:
+    path:  /
+    defaults: { _controller: "CovoiturageBundle:AdminCovoiturage:index" }
+
+admin_covoiturage_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "CovoiturageBundle:AdminCovoiturage:sort" }
+    requirements: { type: ASC|DESC }
+
+admin_covoiturage_show:
+    path:  /{id}/show
+    defaults: { _controller: "CovoiturageBundle:AdminCovoiturage:show" }
+
+admin_covoiturage_new:
+    path:  /new
+    defaults: { _controller: "CovoiturageBundle:AdminCovoiturage:new" }
+
+admin_covoiturage_create:
+    path:  /create
+    defaults: { _controller: "CovoiturageBundle:AdminCovoiturage:create" }
+    requirements: { method: post }
+
+admin_covoiturage_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "CovoiturageBundle:AdminCovoiturage:edit" }
+
+admin_covoiturage_update:
+    path:  /{id}/update
+    defaults: { _controller: "CovoiturageBundle:AdminCovoiturage:update" }
+    requirements: { method: post|put }
+
+admin_covoiturage_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "CovoiturageBundle:AdminCovoiturage:delete" }
+    requirements: { method: post|delete }

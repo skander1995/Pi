@@ -1,0 +1,323 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+    <div class="page-title-section faq">
+        <div class="container">
+            <div class="headline">
+                <h1 class="title">How Can We Help You?</h1>
+            </div>
+            <div class="page-search">
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="search_content" class="screen-reader-text">Search Content!</label>
+                        <input id="search_content" type="text" class="form-control"
+                               placeholder="Search what you want to find...">
+                    </div>
+                    <button type="submit" class="btn btn-primary" value=""><i class="icon ion-ios-search-strong"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-contents">
+        <div class="container ">
+
+            <!-- FAQ Menu
+            ================================================= -->
+            <ul class="nav nav-tabs faq-cat-list">
+                <li class="active"><a href="#faq_cat_1" data-toggle="tab"><i
+                                class="icon ion-ios-information-outline"></i>General</a></li>
+                <li><a href="#faq_cat_2" data-toggle="tab"><i class="icon ion-ios-person"></i>Account</a></li>
+                <li><a href="#faq_cat_3" data-toggle="tab"><i class="icon ion-eye-disabled"></i>Privacy</a></li>
+                <li><a href="#faq_cat_4" data-toggle="tab"><i class="icon ion-ios-plus-outline"></i>Other</a></li>
+            </ul><!-- .faq-cat-list -->
+
+            <div class="row">
+                <div class="col-sm-9">
+
+                    <!-- FAQ Content par question . CATEGORIE
+                    ================================================= -->
+                    <div class="tab-content faq-content">
+                        <!-- FAQ Category Content : General -->
+                        <div class="tab-pane active" id="faq_cat_1">
+                            <div class="faq-headline">
+                                <h3 class="item-title grey"><i class="icon ion-ios-information-outline"></i>General
+                                    Questions</h3>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                    voluptatum deleniti atque corrupti quos dolores et quas molestias.</p>
+                            </div>
+
+
+                            <div class="panel-group" id="faqAccordion-1">
+                                {% for question in questions %}
+                                    {% if question.etat =='1' %}
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading accordion-toggle question-toggle collapsed"
+                                                 data-toggle="collapse" data-parent="#faqAccordion-1"
+                                                 data-target="#question{{ question.idPub }}">
+                                                <h4 class="panel-title">
+                                                    <a href="javascript:void(0);" class="ing">
+                                                        Q: {{ question.sujet }}
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="question{{ question.idPub }}" class="panel-collapse collapse"
+                                                 style="height: 0px;">
+                                                <div class="panel-body">
+                                                    <h5><span class="label label-primary">Answer</span></h5>
+                                                    <p>{{ question.description }}</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- .panel -->
+                                    {% endif %}
+                                {% endfor %}
+                            </div><!-- .panel-group -->
+
+                        </div><!-- #faq_cat_1 -->
+
+                        <!-- FAQ Category Content : Account -->
+                        <div class="tab-pane" id="faq_cat_2">
+                            <div class="faq-headline">
+                                <h3 class="item-title grey"><i class="icon ion-ios-person"></i>Account</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud</p>
+                            </div>
+                            <div class="panel-group" id="faqAccordion-2">
+                                {% for question in questions %}
+                                    {% if question.etat =='2' %}
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading accordion-toggle question-toggle collapsed"
+                                                 data-toggle="collapse" data-parent="#faqAccordion-2"
+                                                 data-target="#question{{ question.idPub }}">
+                                                <h4 class="panel-title">
+                                                    <a href="javascript:void(0);"
+                                                       class="ing">Q: {{ question.sujet }}</a>
+                                                </h4>
+                                            </div>
+                                            <div id="question{{ question.idPub }}" class="panel-collapse collapse"
+                                                 style="height: 0px;">
+                                                <div class="panel-body">
+                                                    <h5><span class="label label-primary">Answer</span></h5>
+                                                    <p>{{ question.description }}</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- .panel -->
+                                    {% endif %}
+                                {% endfor %}
+                            </div><!--.panel-group-->
+                        </div><!-- #faq_cat_2 -->
+
+                        <!-- FAQ Category Content : Privacy -->
+                        <div class="tab-pane" id="faq_cat_3">
+                            <div class="faq-headline">
+                                <h3 class="item-title grey"><i class="icon ion-eye-disabled"></i>Privacy FAQ</h3>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                    quasi</p>
+                            </div>
+                            <div class="panel-group" id="faqAccordion-3">
+                                {% for question in questions %}
+                                    {% if question.etat =='3' %}
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading accordion-toggle question-toggle collapsed"
+                                                 data-toggle="collapse" data-parent="#faqAccordion-3"
+                                                 data-target="#question{{ question.idPub }}">
+                                                <h4 class="panel-title">
+                                                    <a href="javascript:void(0);"
+                                                       class="ing">Q: {{ question.sujet }}</a>
+                                                </h4>
+                                            </div>
+                                            <div id="question{{ question.idPub }}" class="panel-collapse collapse"
+                                                 style="height: 0px;">
+                                                <div class="panel-body">
+                                                    <h5><span class="label label-primary">Answer</span></h5>
+                                                    <p>{{ question.description }}</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- .panel -->
+                                    {% endif %}
+                                {% endfor %}
+                            </div><!--.panel-group-->
+                        </div><!-- #faq_cat_2 -->
+
+                        <!-- FAQ Category Content : Other -->
+                        <div class="tab-pane" id="faq_cat_4">
+                            <div class="faq-headline">
+                                <h3 class="item-title grey"><i class="icon ion-ios-plus-outline"></i>Other FAQ</h3>
+                                <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum
+                                    soluta nobis est eligendi optio cumque nihil impedit quo minus id quod</p>
+                            </div>
+                            <div class="panel-group" id="faqAccordion-4">
+                                {% for question in questions %}
+                                    {% if question.etat =='4' %}
+                                        <div class="panel panel-default ">
+                                            <div class="panel-heading accordion-toggle question-toggle collapsed"
+                                                 data-toggle="collapse" data-parent="#faqAccordion-4"
+                                                 data-target="#question{{ question.idPub }}">
+                                                <h4 class="panel-title">
+                                                    <a href="javascript:void(0);"
+                                                       class="ing">Q: {{ question.sujet }}</a>
+                                                </h4>
+                                            </div>
+                                            <div id="question{{ question.idPub }}" class="panel-collapse collapse"
+                                                 style="height: 0px;">
+                                                <div class="panel-body">
+                                                    <h5><span class="label label-primary">Answer</span></h5>
+                                                    <p>{{ question.description }}</p>
+                                                </div>
+                                            </div>
+                                        </div><!-- .panel -->
+                                    {% endif %}
+                                {% endfor %}
+                            </div><!--.panel-group-->
+                        </div><!-- #faq_cat_2 -->
+
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="faq_contact">
+                        <div class="faq-headline">
+                            <h3 class="item-title grey"><i class="icon ion-ios-help-outline"></i>Still Confused?</h3>
+                            <p>Contact us if you still have any question.</p>
+                        </div>
+                        <div class="reach-out">
+                            <div id="ask" class="method by-forum"><a href="#"><i class="icon ion-chatboxes"></i>Poser
+                                    votre question</a>
+
+                            </div>
+                            <div class="method by-ticket"><a id="test" href="#"><i class="icon ion-help-circled"></i>Send
+                                    Ticket</a></div>
+                            <div class="method by-email"><a href="#"><i class="icon ion-email"></i>Email us</a></div>
+                            <div class="method by-phone"><a href="#"><i class="icon ion-android-call"></i>Call us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:35px 50px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+                    </div>
+                    <div class="modal-body" style="padding:40px 50px;">
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span
+                                    class="glyphicon glyphicon-remove"></span> Cancel
+                        </button>
+                        <p>Not a member? <a href="#">Sign Up</a></p>
+                        <p>Forgot <a href="#">Password?</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script>
+        var array = [];
+        pressed = false;
+        $(document).ready(function () {
+            $("#ask").click(function () {
+                //load Form with Ajax request
+                console.log(pressed);
+                //activaTab('login');
+                if (!pressed) {
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ path('question_new') }}",
+                        //data: DATA,
+                        success: function (data) {
+                            //console.log(data);
+                            form = $(data).find("#faqbundle_question").parent();
+                            data = $(form).unwrap("#faqbundle_question");
+                            //console.log(form);
+                            console.log(data);
+                            $(".modal-body").html(
+                                data
+                            );
+                            pressed = true;
+                        },
+                        error: function () {
+                            console.log("errrrrrrrrrrr");
+                        }
+                    })
+                }
+                $("#myModal").modal();
+            });
+        });
+
+        var searchRequest = null;
+        $(function () {
+            $("#search_content").autocomplete({
+                source: function (request, response) {
+                    if (searchRequest != null)
+                        searchRequest.abort();
+
+                    searchRequest = $.ajax({
+                        type: "POST",
+                        data: 'data=' + $('#search_content').val(),
+                        url: "{{ path('search_ajax') }}",
+                        dataType: "json",
+                        //data: { term: request.term },
+                        success: function (data) {
+                            response($.map(data, function (el) {
+                                return el.idPub + ' - ' + el.description;
+                            }));
+                        }
+                    });
+                },
+                minLength: 0,
+                select: function (event, ui) {
+                    console.log(ui.item.value);
+                    var at = ui.item.value.indexOf('-');
+                    window.location.replace("http://localhost/fosbundleproj/web/app_dev.php/question/" + ui.item.value.substr(0, at - 1) + "/show");
+                    {#
+                    {% redirect 'show/1' %}
+                    #}
+                }
+
+            }).focus(function () {
+                // show the ting
+            });
+        });
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : sParameterName[1];
+                }
+            }
+        };
+
+        {% if( param.idPub is defined) %}
+        // have to get parent to target open tabbed bootsrap
+        $("#question" + {{ param.idPub }}).collapse('show');
+        {% endif %}
+    </script>
+{% endblock %}

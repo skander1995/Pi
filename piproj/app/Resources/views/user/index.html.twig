@@ -1,0 +1,67 @@
+{% extends "layout/base-layout.html.twig" %}
+
+{% import "AvanzuAdminThemeBundle:layout:macros.html.twig" as macro %}
+{% block page_title %} User list {% endblock %}
+{% block page_content %}
+    <h1>Users list</h1>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:hover {background-color: #f5f5f5;}
+    </style>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Datenaissance</th>
+            <th>Telephone</th>
+            <th>Photo_profile</th>
+            <th>Profilepicture</th>
+            <th>Createdat</th>
+            <th>Updateat</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{% if user.datenaissance %}{{ user.datenaissance|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ user.telephone }}</td>
+                <td>{{ user.photoprofile }}</td>
+                <td>{{ user.profilePicture }}</td>
+                <td>{% if user.createdAt %}{{ user.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if user.updateAt %}{{ user.updateAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('user_new') }}">Create a new user</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends'::base.html.twig' %}
+{% block body %}
+<h1>afficher les voiture</h1>
+
+<table border="1" >
+    <tr>
+        <td> username </td>
+        <td> date </td>
+        <td> Description </td>
+        <td> Section </td>
+        <td> Matiére </td>
+        <td> Document </td>
+
+    </tr>
+
+    {% for ligne in Aide %}
+
+
+        <tr>
+
+            <td> <img src="{{ asset('upload/users/' ~ user[loop.index0].photoprofile) }}"height="40"width="40" /></td>
+            <td> {{ ligne.datepub | date('Y-m-d') }}</td>
+            <td> {{ ligne.description }} </td>
+            <td> {{ ligne.matiere }}</td>
+            <td> {{ ligne.section }}</td>
+            <td> <a href="{{ asset('upload/files/' ~ ligne.document) }}">View file</a> </td>
+
+            <td ><a href="{{ path('educ_delete',{'id':ligne.idpub}) }}">Supprimer</a> </td>
+            <td ><a href="{{ path('educ_update',{'id':ligne.idpub}) }}">modifier</a> </td>
+        </tr>
+
+
+{% endfor %}
+</table>
+{% endblock %}

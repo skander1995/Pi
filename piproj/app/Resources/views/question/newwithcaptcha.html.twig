@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Question creation</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="g-recaptcha" data-sitekey="6LcwalIUAAAAAJq5QNV4MXCLeTdXxdgZ2o_xsSau"
+         data-callback="recaptchaCallback"
+    ></div>
+
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('question_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script src='https://www.google.com/recaptcha/api.js'>
+
+    </script>
+{% endblock %}

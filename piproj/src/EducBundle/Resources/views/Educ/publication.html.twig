@@ -1,0 +1,305 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <div class="timeline">
+    <div class="timeline-cover">
+
+        <!--Timeline Menu for Large Screens-->
+        <div class="timeline-nav-bar hidden-sm hidden-xs">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="profile-info">
+                        <img src="{{ asset('upload/users/' ~ current_user.getPhotoprofile()) }}" alt=""
+                             class="img-responsive profile-photo"/>
+                        <h3>Accueil</h3>
+
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <ul class="list-inline profile-menu">
+                        <li><a href="{{ asset('timeline.html') }}" class="active">Timeline</a></li>
+                        <li><a href="{{ asset('timeline-about.html') }}">About</a></li>
+                        <li><a href="{{ asset('timeline-album.html') }}">Album</a></li>
+                        <li><a href="{{ asset('timeline-friends.html') }}">Friends</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div><!--Timeline Menu for Large Screens End-->
+
+        <!--Timeline Menu for Small Screens-->
+        <div class="navbar-mobile hidden-lg hidden-md">
+            <div class="profile-info">
+                <img src="{{ asset('upload/users/' ~ current_user.photoprofile) }}" alt=""
+                     class="img-responsive profile-photo"/>
+                <h4>{{ current_user.username }}</h4>
+
+            </div>
+            <div class="mobile-menu">
+                <ul class="list-inline">
+                    <li><a href="{{ asset('timline.html') }}" class="active">Timeline</a></li>
+                    <li><a href="{{ asset('timeline-about.html') }}">About</a></li>
+                    <li><a href="{{ asset('timeline-album.html') }}">Album</a></li>
+                    <li><a href="{{ asset('timeline-friends.html') }}">Friends</a></li>
+                </ul>
+                <button class="btn-primary">Add Friend</button>
+            </div>
+        </div><!--Timeline Menu for Small Screens End-->
+
+    </div>
+    <div id="page-contents">
+    <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-7">
+
+<div class="post-content" id="post-content" >
+
+        <!--Post Date-->
+        <div class="post-date hidden-xs hidden-sm">
+            <h5>{{ Aide.idusr.username }}</h5>
+            <p class="text-grey">Sometimes ago</p>
+        </div><!--Post Date End-->
+        <div class="reaction">
+            {% set div =0 %}
+            {% set somme =0 %}
+            {%  for rate in rate %}
+
+                {% if rate.idPub == (Aide.idpub) %}
+                    {% set div=div + 1 %}
+
+                    {% set somme=somme + (rate.note) %}
+                    {% set total = (somme)/(div) %}
+
+                {% endif %}
+            {% endfor %}
+            <div class="box-result">
+
+                <div class="result-container">
+                    <div class="rate-bg" style="width:{{ (somme/div)/5*100 }}%"></div>
+                    <div class="rate-stars"></div>
+                </div>
+                <p style="margin:5px 0px; font-size:16px; text-align:center">Rated {{ somme/div }} out of {{ div }} Review(s)</p>
+            </div>
+        </div>
+        <div class="post-container">
+            <img src="{{ asset('upload/users/' ~Aide.idusr.photoprofile) }}" alt="user"
+                 class="profile-photo-md pull-left"/>
+            <div class="post-detail">
+                <div class="user-info">
+                    <h5><a href="{{ asset('timeline.html') }}"
+                           class="profile-link">{{ Aide.idusr.username }}</a> <span
+                                class="following">following</span></h5>
+                    <p class="text-muted">{{ Aide.datepub | date('Y-m-d') }}</p>
+                </div>
+
+                <div class="line-divider"></div>
+                <div class="post-text">
+                    <p>{{ Aide.description }}</p>
+                </div>
+                <div class="line-divider"></div>
+
+                <a href="{{ asset('upload/files/' ~ Aide.document) }}" class="space">
+                    <img src="{{ asset('images/post-images/filesk.png') }}" alt="post-image"
+                         class="dd post-image" title="download file "/>
+                    <p class="dd space">Download</p>
+                </a>
+
+                <div class="line-divider"></div>
+
+
+                <table>
+                    <tr>
+                        <td>
+                            <div class="post-text">
+                                <p class="dd"><h5>Section:</h5> {{ Aide.section }}</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="post-text space ">
+                                <p><h5> Matiére:</h5> {{ Aide.matiere }}</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> {{ facebookButton() }}
+
+
+
+                        </td>
+
+                        <td>
+                            <div id="parent{{ Aide.idpub }} " class="space">
+                                <form method="post" >
+                                    <fieldset >
+                                        <input id="formname{{Aide.idpub}}" name="formname" value="" hidden>
+                                        <div id="parent{{ Aide.idpub }}">
+
+                                            <div class="rate r{{ Aide.idpub }}">
+
+                                                <div id="1" class="btn-1 rate-btn b{{ Aide.idpub }}"></div>
+                                                <div id="2" class="btn-2 rate-btn b{{ Aide.idpub }}"></div>
+                                                <div id="3" class="btn-3 rate-btn b{{ Aide.idpub }}"></div>
+                                                <div id="4" class="btn-4 rate-btn b{{ Aide.idpub }}"></div>
+                                                <div id="5" class="btn-5 rate-btn b{{ Aide.idpub }}"></div>
+                                                <button class="btn btn-primary" id="sub" type="submit"> evaluer </button>
+                                                <input hidden id="note{{ Aide.idpub}}" name="note"> </input>
+                                                <input hidden id="idpub{{ Aide.idpub}}" name="idpub"> </input>
+                                                <input hidden id="postid{{Aide.idpub }}" value="{{ Aide.idPub }}"> </input>
+
+
+                                            </div>
+                                            <br>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </fieldset>
+                </form>
+
+                {% for com in comments %}
+                    {% if com.idpub == (Aide.idpub ) %}
+
+
+                        <div class="line-divider"></div>
+                        <div class="line-divider"></div>
+                        <div class="post-comment">
+                            <img src="{{ asset('upload/users/' ~ com.idUsr.photoprofile) }}" alt=""
+                                 class="profile-photo-sm"/>
+                            <p><a href="{{ asset('timeline.html') }}"
+                                  class="profile-link"> {{ com.idUsr.username }}</a><i
+                                        class="em em-laughing"></i> {{ com.contenucom }} </p>
+                            {% if com.idUsr.id == current_user.id %}
+                                <a class="dropdown-item space" href="{{ path('educ_delete_com',{'id':(com.idcom)}) }}">Supprimer</a>
+                            {% endif %}
+                        </div>
+
+                    {% endif %}
+                {% endfor %}
+
+
+                <div class="line-divider"></div>
+                <div class="line-divider"></div>
+                <div class="post-comment">
+                    <table>
+                        <tr>
+                            <form method="post">
+                                <fieldset>
+                                    <td>
+                                        <img src="{{ asset('upload/users/' ~ current_user.photoprofile) }}"
+                                             alt="" class="profile-photo-sm"/></td>
+                                    <td><input required type="text" class="form-control"
+                                               placeholder="Post a comment" name="cont"></td>
+                                    <td>
+                                        <button class="btn btn-save " type="submit"> commenter
+                                        </button>
+                                    </td>
+                                    <td><input name="ipbub" value="{{ Aide.idpub }}" hidden></td>
+
+
+                                </fieldset>
+                            </form>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript"
+            src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+    <script>
+        ////////
+        $(document).ready(function () {
+
+            setTimeout( function(){
+                $('#twitter-widget-0').trigger('click');
+            }  , 5000 );
+
+
+
+        });
+        $("#search_content").keyup(
+            function () {
+                var   pays=$('#search_content').val();
+                //    var DATA ='pays'+pays;
+                var DATA ='pays='+pays;
+                var i=0;
+                $.ajax({
+
+                    type:"POST",
+                    url:"{{ path('educ_recherche') }}",
+                    data: DATA,
+                    success: function (data) {
+                        console.log("data**");
+                        console.log(data);
+                        //language=HTML
+                        $("#div").html("<div class=\"row\">");
+                        $.each(data,function (k, el) {
+                                $("#page-contents").hide();
+                                $('#res').append(
+                                );
+                            }
+
+
+                        );
+                    },
+                    error:function (xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });            }
+        );
+        ///////////////////----stars----///////////
+        $(function () {
+
+            $('.rate-btn').hover(function () {
+
+                if ($(this).parent().attr('class') == 'rate r{{ Aide.idpub }}') {
+
+
+                    $('.r{{ Aide.idpub }} > .rate-btn').removeClass('rate-btn-hover');
+                    var therate = $(this).attr('id');
+                    for (var i = therate; i >= 0; i--) {
+                        $('.r{{ Aide.idpub }} > .btn-' + i).addClass('rate-btn-hover');
+                    }
+                }
+            });
+
+            $('.rate-btn').click(function () {
+                console.log("presse");
+
+
+                var therate = $(this).attr('id');
+                $("#note{{ Aide.idpub }}").val(therate);
+
+                if ($(this).parent().attr('class') === 'rate r{{ Aide.idpub }}') {
+                    $('#formname{{Aide.idpub}}').val(2);
+                    console.log('bonjour');
+                    console.log({{ Aide.idpub }});
+
+                    var postid = $('#postid{{Aide.idpub}}').val();
+                    console.log('POSTTTT');
+
+                    console.log(postid);
+                    $("#idpub{{ Aide.idpub }}").val(postid);
+                    $('.r{{ Aide.idpub }} > .rate-btn').removeClass('rate-btn-active');
+                    for (var i = therate; i >= 0; i--) {
+                        $('.r{{ Aide.idpub }} > .btn-' + i).addClass('rate-btn-active');
+                    }
+                    $('#formname{{Aide.idpub}}').val();
+                }
+
+
+            });
+        });
+    </script>
+    </div>
+    </div>
+    </div>
+
+{% endblock %}

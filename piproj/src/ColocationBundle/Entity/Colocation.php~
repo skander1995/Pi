@@ -1,0 +1,120 @@
+<?php
+
+namespace ColocationBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Colocation
+ *
+ * @ORM\Table(name="colocation", indexes={@ORM\Index(name="FK_SITUER_COLOC", columns={"ID_VILLE"})})
+ * @ORM\Entity
+ */
+class Colocation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ID_PUB", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPub;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ID_USR", type="integer", nullable=true)
+     */
+    private $idUsr;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DATEPUB", type="date", nullable=true)
+     */
+    private $datepub;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DESCRIPTION", type="text", length=65535, nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ETAT", type="string", length=20, nullable=true)
+     */
+    private $etat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="LIEU", type="string", length=50, nullable=true)
+     */
+    private $lieu;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="LOYERMENSUEL", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $loyermensuel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TYPELOGEMENT", type="string", length=50, nullable=true)
+     */
+    private $typelogement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="TYPECHAMBRE", type="string", length=50, nullable=true)
+     */
+    private $typechambre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="IMGCOUVERTURE", type="text", length=65535, nullable=true)
+     */
+    private $imgcouverture;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="NBCHAMBRE", type="integer", nullable=true)
+     */
+    private $nbchambre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="COMMODITE", type="string", length=250, nullable=true)
+     */
+    private $commodite;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DATEDISPONIBILITE", type="date", nullable=true)
+     */
+    private $datedisponibilite;
+
+    /**
+     * @var \TmpBundle\Entity\Ville
+     *
+     * @ORM\ManyToOne(targetEntity="TmpBundle\Entity\Ville")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="ID_VILLE", referencedColumnName="ID_VILLE")
+     * })
+     */
+    private $idVille;
+
+
+}
+

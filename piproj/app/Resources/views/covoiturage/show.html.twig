@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <h1>Covoiturage</h1>
+
+<div class="container">
+    <div class="row form-group">
+        <div class="col-xs-12">
+            <div class="col-md-12 well text-center">
+                <table>
+            <tr>
+                <div align="left">
+                <td width="33%" align="left">
+                    <h3 style="color: black">Lieu Départ</h3>
+                    <h4 class="fa fa-map-marker fa-2x">{{ covoiturage.lieudepart }}</h4><br><br>
+                <h3 style="color: black" >Lieu D'arrive</h3>
+                    <h4 class="fa fa-map-marker fa-2x" >{{ covoiturage.lieuarrive }}</h4><br><br>
+               <h3 style="color: black"> Date Publication</h3>
+                    <h4 class="fa fa-calendar fa-2x"> {% if covoiturage.datepub %}{{ covoiturage.datepub|date('Y-m-d') }}{% endif %}</h4><br><br>
+
+
+
+                    <h3 style="color: black"> Votre Avis:</h3>
+
+                        {{ form_start(note) }}
+                    {{ form_widget(note.rating,{'attr':{'name':'notes' ,'id':'notes'}}) }}
+                    <input type="submit" class="btn-primary" value="Donner Votre Avis">
+                    {{ form_end(note) }}
+
+
+
+                </td>
+
+                <td width="33%" align="left" style="padding-left: 5%" >
+                <h3 style="color: black"> Description</h3>
+                    <h4> {{ covoiturage.description }}</h4><br>
+               <h3 style="color: black">Date De Départ</h3>
+                    <h4  class="fa fa-calendar fa-2x">{% if covoiturage.datedepart %}{{ covoiturage.datedepart|date('Y-m-d') }}{% endif %}</h4><br><br>
+               <h3 style="color: black">Prix</h3>
+                    <h4>{{ covoiturage.prix }}</h4><br>
+                <h3 style="color: black">Nombre De Places</h3>
+                    <h4>{{ covoiturage.nbplace }}</h4><br>
+
+                </td>
+
+
+                </div>
+                <td width="33%" align="left" style="padding-left: 10%">
+
+
+                    <div class="agile_map">
+                        <iframe
+                                width="500"
+                                height="400"
+                                frameborder="0" style="border:0"
+                                src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyA2Wnly33IghF5Mryn9BBA0hpVn4EGENdg&origin={{covoiturage.lieuarrive}}&destination={{covoiturage.lieudepart}}&avoid=tolls|highways " allowfullscreen>
+                        </iframe>
+                    </div>
+                </td>
+            </tr>
+    </table>
+                <div id="map" style="overflow: hidden; position: relative;"> </div><br>
+                <a href="{{ path('covoiturage_index') }}" class="btn-primary" >Retour</a>
+                <a href="{{ path('covoiturage_EnvoyerMail',{'id':covoiturage.idPUB}) }}" class="btn-primary" >Envoyer mail</a>
+
+        </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+           {# <a href="{{ path('covoiturage_edit', { 'idPub': covoiturage.idPub }) }}">Edit</a>
+
+            {{ form_start(delete_form) }}
+                <input type="submit"  value="Delete">
+            {{ form_end(delete_form) }}#}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base1.html.twig' %}
+
+{% block body %}
+<div id="lp-register">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+
+        <div class="reg-form-container">
+    <h1>Evenement edit</h1>
+
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input class="btn-primary" type="submit" value="Enregistrer" />
+    {{ form_end(edit_form) }}
+            {{ form_start(delete_form) }}
+            <input type="submit" class="btn-warning" value="Delete">
+            {{ form_end(delete_form) }}
+
+
+            <a href="{{ path('evenement_index') }}" class="btn btn-block">La liste des évènements</a>
+
+
+
+
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+{% endblock %}

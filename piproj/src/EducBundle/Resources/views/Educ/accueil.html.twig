@@ -1,0 +1,305 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <div class="timeline">
+        <div class="timeline-cover">
+
+            <!--Timeline Menu for Large Screens-->
+            <div class="timeline-nav-bar hidden-sm hidden-xs">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="profile-info">
+                            <img src="{{ asset('upload/users/' ~ current_user.getPhotoprofile()) }}" alt=""
+                                 class="img-responsive profile-photo"/>
+                            <h3>Accueil</h3>
+
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <ul class="list-inline profile-menu">
+                            <li><a href="{{ asset('timeline.html') }}" class="active">Timeline</a></li>
+                            <li><a href="{{ asset('timeline-about.html') }}">About</a></li>
+                            <li><a href="{{ asset('timeline-album.html') }}">Album</a></li>
+                            <li><a href="{{ asset('timeline-friends.html') }}">Friends</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div><!--Timeline Menu for Large Screens End-->
+
+            <!--Timeline Menu for Small Screens-->
+            <div class="navbar-mobile hidden-lg hidden-md">
+                <div class="profile-info">
+                    <img src="{{ asset('upload/users/' ~ current_user.photoprofile) }}" alt=""
+                         class="img-responsive profile-photo"/>
+                    <h4>{{ current_user.username }}</h4>
+
+                </div>
+                <div class="mobile-menu">
+                    <ul class="list-inline">
+                        <li><a href="{{ asset('timline.html') }}" class="active">Timeline</a></li>
+                        <li><a href="{{ asset('timeline-about.html') }}">About</a></li>
+                        <li><a href="{{ asset('timeline-album.html') }}">Album</a></li>
+                        <li><a href="{{ asset('timeline-friends.html') }}">Friends</a></li>
+                    </ul>
+                    <button class="btn-primary">Add Friend</button>
+                </div>
+            </div><!--Timeline Menu for Small Screens End-->
+
+        </div>
+        <div id="page-contents">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-5">
+
+                    {% for pub in pub %}
+                        {% if pub['type']=='aide' %}
+                    <div class="post-content" id="post-content" >
+                            <div class="post-container">
+                                {% for user in users %}
+                                {% if user.id == (pub.idUsr) %}
+                                <img src="{{ asset('upload/users/' ~user.photoprofile) }}" alt="user"
+                                     class="profile-photo-md pull-left"/>
+                                <div class="post-detail">
+                                    <div class="user-info">
+                                        <h5><a href="{{ asset('timeline.html') }}"
+                                               class="profile-link">{{ user.username }}</a> <span
+                                                    class="following">following</span></h5>
+                                        <p class="text-muted">{{ pub.datepub | date('Y-m-d') }}</p>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+
+                                    <div class="line-divider"></div>
+                                    <div class="post-text">
+                                        <p>{{ pub.description }}</p>
+                                    </div>
+                                    <div class="line-divider"></div>
+
+                                    <a href="{{ asset('upload/files/' ~ pub.document) }}" class="space">
+                                        <img src="{{ asset('images/post-images/filesk.png') }}" alt="post-image"
+                                             class="dd post-image" title="download file "/>
+                                        <p class="dd space">Download</p>
+                                    </a>
+
+                                    <div class="line-divider"></div>
+
+
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="post-text">
+                                                    <p class="dd"><h5>Section:</h5> {{ pub.section }}</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="post-text space ">
+                                                    <p><h5> Matiére:</h5> {{ pub.matiere }}</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            {#    <td>{{twitterButton(  ) }}</td> #}
+
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                    </div>
+
+                        {% endif %}
+                        {% if pub['type']=='evenement' %}
+<div class="friend-list">
+                            {% for user in users %}
+                                {% if user.id == (pub.idUsr) %}
+<div class="col-md-10 col-sm-10" style="clear:top">
+                                    <div class="friend-card " >
+                                        <div class="img-responsive" ><img src="{{ asset('images/album/5.jpg')}}" width="400px" height="150px"  ></div>
+                                        <div class="card-info">
+                                            <img src="{{ asset('upload/users/')~user.PhotoProfile}}" alt="user" class="profile-photo-lg"  >
+                                            <h5>{{ user.username }}</h5>
+                                            <div class="line-divider"></div>
+                                            <div class="friend-info">
+                                                <h5>{{ pub.NOM_EVENT }}</h5>
+                                                <h5><i class="icon ion-ios-location-outline"></i>   {{ pub.LIEU }}</h5>
+                                                <h5> <i class="icon ion-android-phone-portrait"></i> telephone : {{ user.telephone }}</h5>
+                                                <h5> <i class="icon ion-android-time"></i> Date publication :{% if pub.datepub %}{{ pub.datepub|date('Y-m-d') }}{% endif %}</h5>
+                                                <h5><i class="icon ion-android-time"></i>  Date début :{% if pub.DATEDEBUT %}{{ pub.DATEDEBUT|date('Y-m-d') }}{% endif %}</h5>
+                                                <h5><i class="icon ion-android-time"></i>  Date fin :{% if pub.DATEFIN %}{{ pub.DATEFIN|date('Y-m-d') }}{% endif %}</h5>
+
+                                                <h5><i class="icon ion-ios-people"></i>Nombre des places disponibles :{{ pub.place_dispo }}</h5>
+
+                                            </div>
+                                        </div>
+                                    </div>
+</div>
+                                {% endif %}
+                                    {% endfor %}
+</div>
+                        {% endif %}
+                        {% if pub['type']=='covoiturage' %}
+                    <div class="post-content" id="post-content" >
+                            <div class="post-container">
+
+                                {% for user in users %}
+                                {% if user.id == (pub.ID_USR) %}
+                                <img src="{{ asset('upload/users/' ~user.photoprofile) }}" alt="user"
+                                     class="profile-photo-md pull-left"/>
+                                <div class="post-detail">
+                                    <div class="user-info">
+                                        <h5><a href="{{ asset('timeline.html') }}"
+                                               class="profile-link">{{ user.username }}</a> <span
+                                                    class="following">following</span></h5>
+                                        <p class="text-muted">{{ pub.datepub | date('Y-m-d') }}</p>
+                                    </div>
+
+
+                                    <div class="line-divider"></div>
+                                    <div class="post-text">
+                                        <p>{{ pub.DESCRIPTION }}</p>
+                                    </div>
+                                    <div class="post-text">
+                                        <p><h5>telephone :</h5>{{ user.telephone }}</p>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <div class="line-divider"></div>
+
+                                    <h4 align="center" style="color: black"><em class="fa fa-road" style="color: #27aae1"></em>
+                                        {{ pub.LIEUDEPART }}-->{{ pub.LIEUARRIVE }} <em class="fa fa-road" style="color: #27aae1"></em></h4>
+
+                                    <div class="line-divider"></div>
+
+
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="post-text">
+                                                    <p class="dd"><h5>date :</h5> {{ pub.DATEDEPART }}</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="post-text space ">
+                                                    <p><h5> nombre de places :</h5> {{ pub.NBPLACE }}</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="post-text space ">
+                                                    <p><h5> PRIX :</h5> {{ pub.PRIX }}</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            {#    <td>{{twitterButton(  ) }}</td> #}
+
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                    </div>
+                        {% endif %}
+                        {% if pub['type']=='colocation' %}
+                        <div class="post-content" id="post-content" >
+                            <div class="post-container">
+                                {% for user in users %}
+                                {% if user.id == (pub.idUsr) %}
+                                <img src="{{ asset('upload/users/' ~user.photoprofile) }}" alt="user"
+                                     class="profile-photo-md pull-left"/>
+                                <div class="post-detail">
+                                    <div class="user-info">
+                                        <h5><a href="{{ asset('timeline.html') }}"
+                                               class="profile-link">{{ user.username }}</a> <span
+                                                    class="following">following</span></h5>
+                                        <p class="text-muted">{{ pub.datepub | date('Y-m-d') }}</p>
+                                    </div>
+
+
+                                    <div class="line-divider"></div>
+                                    <div class="post-text">
+                                        <h3><p>{{ pub.titre }}</p></h3>
+                                    </div>
+                                    <div class="post-text">
+                                        <p>{{ pub.DESCRIPTION }}</p>
+                                    </div>
+                                    <div class="post-text">
+                                        <p><h5>telephone :</h5>{{ user.telephone }}</p>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <div class="line-divider"></div>
+
+                                    <div class="post-text ">
+                                        <p><h5> LIEU :</h5> {{ pub.LIEU }}</p>
+                                    </div>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div class="post-text">
+                                                    <p class="dd"><h5>DATE de DISPONIBILITE :</h5> {{ pub.DATEDISPONIBILITE }}</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="post-text space ">
+                                                    <p><h5> Nombre de chambres :</h5> {{ pub.NBCHAMBRE }}</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="post-text space ">
+                                                    <p><h5> 	Loyer mensuel :</h5> {{ pub.LOYERMENSUEL }}</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            {#    <td>{{twitterButton(  ) }}</td> #}
+
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+                <div class="col-md-2 static">
+                    <div id="sticky-sidebar">
+                        <h4 class="grey">Sarah's activity</h4>
+                        <div class="feed-item">
+                            <div class="live-activity">
+                                <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
+                                <p class="text-muted">5 mins ago</p>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <div class="live-activity">
+                                <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
+                                <p class="text-muted">an hour ago</p>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <div class="live-activity">
+                                <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
+                                <p class="text-muted">4 hours ago</p>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <div class="live-activity">
+                                <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
+                                <p class="text-muted">a day ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

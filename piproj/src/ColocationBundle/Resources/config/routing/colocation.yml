@@ -1,0 +1,35 @@
+admin_colocation:
+    path:  /
+    defaults: { _controller: "ColocationBundle:Colocation:index" }
+
+admin_colocation_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "ColocationBundle:Colocation:sort" }
+    requirements: { type: ASC|DESC }
+
+admin_colocation_show:
+    path:  /{id}/show
+    defaults: { _controller: "ColocationBundle:Colocation:show" }
+
+admin_colocation_new:
+    path:  /new
+    defaults: { _controller: "ColocationBundle:Colocation:new" }
+
+admin_colocation_create:
+    path:  /create
+    defaults: { _controller: "ColocationBundle:Colocation:create" }
+    requirements: { method: post }
+
+admin_colocation_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "ColocationBundle:Colocation:edit" }
+
+admin_colocation_update:
+    path:  /{id}/update
+    defaults: { _controller: "ColocationBundle:Colocation:update" }
+    requirements: { method: post|put }
+
+admin_colocation_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "ColocationBundle:Colocation:delete" }
+    requirements: { method: post|delete }

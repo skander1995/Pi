@@ -1,0 +1,69 @@
+educ_homepage:
+    path:     /educ_add
+    defaults: { _controller: EducBundle:Educ:Add}
+educ_affichage:
+    path:     /educ_affichage
+    defaults: { _controller: EducBundle:Educ:afficher}
+
+educ_delete:
+    path:     /educ_delete/{id}
+    defaults: { _controller: EducBundle:Educ:delete}
+educ_update:
+    path:     /educ_update/{id}
+    defaults: { _controller: EducBundle:Educ:update}
+
+
+
+educ_affichage_private:
+    path:     /educ_private
+    defaults: { _controller: EducBundle:Educ:affichageprivate}
+
+
+educ_delete_com:
+    path:     /educ_delete_com/{id}
+    defaults: { _controller: EducBundle:Educ:delete_com}
+
+educ_pub_sh:
+    path:     /educ_pub_sh/{id}
+    defaults: { _controller: EducBundle:Educ:pub}
+
+educ_recherche:
+    path:     /educ_search
+    defaults: { _controller: EducBundle:Educ:rechercheAideDql}
+
+educ_accueil:
+    path:     /accueil
+    defaults: { _controller: EducBundle:Educ:pageaccueil}
+
+
+all_mob:
+    path:     /tasks/all
+    defaults: { _controller: EducBundle:Educ:Allmob}
+find_mob:
+    path:     /tasks/find/{id}
+    defaults: { _controller: EducBundle:Educ:Findmob}
+add_mob:
+    path:     /tasks/add/{idusr}/{document}/{description}/{section}/{matiere}
+    defaults: { _controller: EducBundle:Educ:Addmob}
+
+delete_educ_mob:
+    path:     /tasks/delete_educ_mob/{id}
+    defaults: { _controller: EducBundle:Educ:deletemob}
+
+rate_add_mob:
+    path:     /tasks/rate/{note}/{iduser}/{idpub}
+    defaults: { _controller: EducBundle:Educ:ratemob}
+
+rate_value_mob:
+    path:     /tasks/rateval/{idpub}
+    defaults: { _controller: EducBundle:Educ:rateval}
+
+
+comm_add_mob:
+    path:     /tasks/comadd/{idusr}/{idpub}/{contenu}
+    defaults: { _controller: EducBundle:Educ:Add_commentmob}
+
+
+all_comments_mob:
+    path:     /tasks/comments/all
+    defaults: { _controller: EducBundle:Educ:All_commentsmob}

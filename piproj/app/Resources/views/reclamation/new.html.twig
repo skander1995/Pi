@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reclamation creation</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_widget(form.useIdUsr, { 'attr': {'class': 'hidden-row'} }) }}
+    <input type="submit" value="Create"/>
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('reclamation_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            // hide useID
+            $('#reclamationbundle_reclamation_useIdUsr').parent().hide();
+            $('#reclamationbundle_reclamation_typeRec').change(function () {
+                //make it visible
+                if ($('#reclamationbundle_reclamation_typeRec').val() === "Utilisateur") {
+                    $('#reclamationbundle_reclamation_useIdUsr').parent().show();
+                } else {
+                    $('#reclamationbundle_reclamation_useIdUsr').val(null);
+                    //$("#reclamationbundle_reclamation_typeRec option[value='Gateway 2']").prop('selected', true);
+                    $('#reclamationbundle_reclamation_useIdUsr').parent().hide();
+                }
+            })
+        })
+    </script>
+
+{% endblock %}

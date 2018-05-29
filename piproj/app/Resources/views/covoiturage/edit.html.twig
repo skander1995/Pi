@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1 >Modifier Covoiturage</h1>
+    <br><br><br>
+<div class="container">
+    <div class="row form-group">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <div class="col-xs-12">
+                    <div class="col-md-12 well text-center">
+                        <table>
+                            <div align="left">
+                                <tr>
+                                <td width="50%" align="left">
+                {{ form_start(edit_form) }}
+                <h4 >Point de départ:</h4>
+                <i class="fa fa-map-marker fa-2x "  style="color:#27aae1"></i>
+                {{ form_widget(edit_form.lieudepart,{'attr':{'class':'fa fa-map-marker fa-2x'}}) }}<br>
+                <br> <h4 >Point d'arrive:</h4>
+                <i class="fa fa-map-marker fa-2x " style="color:#27aae1"></i>
+                {{ form_widget(edit_form.lieuarrive,{'attr':{'class':'fa fa-map-marker fa-2x'}}) }}<br>
+                <br> <h4 >Date Depart:</h4>
+                {{ form_widget(edit_form.datedepart, {'attr':{'class':'fa fa-calendar fa-2x'}}) }}
+                </td>
+
+                            <td>
+                                <div class="col-xs-12">
+                                        <div align="left" >
+                                            <h4>Participation demandée par passager:</h4>
+                                            <i class="fa fa-dollar fa-2x" aria-hidden="true" style="color: #27aae1" ></i>
+                                            {{ form_widget(edit_form.prix,{'attr':{'class':'fa fa-dollar fa-2x'}}) }}<br>
+
+                                            <br><h4 >Nombre de places proposées:</h4>
+                                            <i class="fa fa-car fa-2x" aria-hidden="true" style="color: #27aae1"></i>
+                                            {{ form_widget(edit_form.nbplace,{'attr':{'class':'fa fa-car fa-2x'}}) }}<br>
+
+                                            <br> <h4 >Description:</h4>
+                                            <i class="fa fa-text-width fa-2x" aria-hidden="true" style="color: #27aae1"></i>
+                                            {{ form_widget(edit_form.description,{'attr':{'class':'fa fa-text-width fa-2x '}}) }}
+
+                                            {{ form_widget(edit_form) }}
+
+                                        </div></div></div></td>
+
+
+<td>
+
+
+        <input type="submit" value="Modifier" class="btn-primary" /><br><br><br>
+    {{ form_end(edit_form) }}
+
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Supprimer" class="btn-primary">
+    {{ form_end(delete_form) }}
+
+    <br><br>  <a href="{{ path('covoiturage_index') }}" class="btn-primary">Retour</a>
+
+
+
+
+
+</td>            </tr>
+
+                        </table></div></div></ul></div></div>
+
+{% endblock %}

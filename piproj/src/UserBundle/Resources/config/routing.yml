@@ -1,0 +1,21 @@
+user_register:
+    path:     /register
+    defaults: { _controller: UserBundle:Register:register }
+user_login:
+    path:     /login-index
+    defaults: { _controller: UserBundle:Login:login }
+user_login_json:
+    path:     /restlogin/{usernameOrEmail}
+    defaults: { _controller: UserBundle:Login:loginService }
+user_photoupload_json:
+    path:     /uploadphoto/{id}
+    defaults: { _controller: UserBundle:Default:uploadPhoto }
+user_new_json:
+    path:     /new/user/{usrn}/{pwd}/{email}/{nom}/{prn}/{dn}
+    defaults: { _controller: UserBundle:Default:register }
+user_addnew_json:
+    path:     /new/user/
+    defaults: { _controller: UserBundle:Default:newUserFromJson }
+user_checkidsocial_json:
+    path:     /check/user/{id}
+    defaults: { _controller: UserBundle:Default:checkSocialId }

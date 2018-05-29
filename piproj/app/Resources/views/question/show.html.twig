@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Question</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idpub</th>
+                <td>{{ question.idPub }}</td>
+            </tr>
+            <tr>
+                <th>Idusr</th>
+                <td>{{ question.idUsr }}</td>
+            </tr>
+            <tr>
+                <th>Datepub</th>
+                <td>{% if question.datepub %}{{ question.datepub|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Sujet</th>
+                <td>{{ question.sujet }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ question.description }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ question.etat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('question_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('question_edit', { 'idPub': question.idPub }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

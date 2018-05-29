@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        .fa-2x {
+            font-size: 1.5em;
+        }
+    </style>
+    <h1>Ajouter Covoiturage</h1>
+
+
+    {# <div class="row">
+        <div class="col-md-2 col-md-offset-3">
+            <div class="input-group">
+                <div class="wrap-contact2 " > #}
+   {# <div class="container">
+        <div class="row form-group">
+            <div class="col-xs-12">
+                <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                    <li class="active"><a href="#step-1">
+                            <h4 class="list-group-item-heading">Etape 1</h4>
+
+                            <p class="list-group-item-text">Itinéraire et date</p>
+                        </a></li>
+                    <li class="disabled"><a href="#step-2">
+                            <h4 class="list-group-item-heading">Etape 2</h4>
+                            <p class="list-group-item-text">Détails d'annonce </p>
+                        </a></li>
+
+                </ul>
+            </div>
+        </div>
+    #}
+<br><br><br>
+    <div class="container">
+        <div class="row form-group">
+            <div class="col-xs-12">
+                <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+        <div class="row setup-content" id="step-1">
+            <div class="col-xs-12">
+                <div class="col-md-12 well text-center">
+                    <table>
+                        <div align="left">
+                            <td width="50%" align="left">
+
+                                {{ form_start(form) }}
+                                <h4 >Point de départ:</h4>
+                               <i class="fa fa-map-marker fa-2x "  style="color:#27aae1"></i>
+                                {{ form_widget(form.lieudepart,{'attr':{'class':'fa fa-map-marker fa-2x'}}) }}<br>
+                                <br> <h4 >Point d'arrive:</h4>
+                                <i class="fa fa-map-marker fa-2x " style="color:#27aae1"></i>
+                                {{ form_widget(form.lieuarrive,{'attr':{'class':'fa fa-map-marker fa-2x'}}) }}<br>
+                                <br> <h4 >Date Depart:</h4>
+                                <i class="fa fa-calendar fa-2x " style="color:#27aae1"></i>
+
+                                {{ form_widget(form.datedepart) }}
+                        </td>
+                </div>
+                </table>
+                    <button id="activate-step-2"  class="btn btn-primary btn-lg">Continuer</button>
+
+                </div>
+        </div>
+    </div>
+
+        <div class="row setup-content" id="step-2">
+            <div class="col-xs-12">
+                <div class="col-md-12 well">
+                    <div align="left" >
+
+                        <h4>Participation demandée par passager:</h4>
+                        <i class="fa fa-dollar fa-2x" aria-hidden="true" style="color: #27aae1" ></i>
+                        {{ form_widget(form.prix,{'attr':{'class':'fa fa-dollar fa-2x','style':'width: 5%'}}) }}<br>
+
+                        <br><h4 >Nombre de places proposées:</h4>
+                        <i class="fa fa-car fa-2x" aria-hidden="true" style="color: #27aae1"></i>
+                        {{ form_widget(form.nbplace,{'attr':{'class':'fa fa-car fa-2x','style':'width: 5%'}}) }}<br>
+
+                        <br> <h4 >Description:</h4>
+                        <i class="fa fa-text-width fa-2x" aria-hidden="true" style="color: #27aae1"></i>
+                        {{ form_widget(form.description,{'attr':{'class':'fa fa-text-width fa-2x','style':'height: 100px'}}) }}
+
+                        {{ form_end(form) }}
+                        <button id="activate-step-3"  class="btn btn-primary btn-lg" style="margin-left: 40%" type="submit">Ajouter annonce</button>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <ul>
+        <li>
+            <a href="{{ path('covoiturage_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

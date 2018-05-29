@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Colocation edit</h1>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    {{ form_start(edit_form) }}
+    <div class="container">
+        {{ form_row(edit_form.description,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.lieu,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.loyermensuel,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.nbchambre,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.datedisponibilite,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.commodite,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.imgcouverture,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.rules,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.chauffagecentrale,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.tv,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.wifi,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.climatiseur,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.camerasurvaillance,{'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.idVille,{'attr':{'class':'form-control'}}) }}
+
+    </div>
+
+    <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+
+
+    <ul>
+        <li>
+            <a href="{{ path('colocation_index') }}">Back to the list</a>
+        </li>
+
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Colocations list</h1>
+
+    <table id="annoncesTable" class="table table-responsive" style="margin-left: 20px;">
+        <thead>
+            <tr>
+                <th>Titre</th>
+
+
+                <th>Description</th>
+
+                <th>Lieu</th>
+                <th>Loyermensuel</th>
+
+
+
+                <th>Nbchambre</th>
+
+                <th>Datedisponibilite</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for colocation in colocations %}
+            <tr>
+                <td><a href="{{ path('colocation_show', { 'idPub': colocation.idPub }) }}">{{ colocation.titre }}</a></td>
+
+                <td>{{ colocation.description }}</td>
+
+                <td>{{ colocation.lieu }}</td>
+                <td>{{ colocation.loyermensuel }}</td>
+
+
+                <td>{{ colocation.nbchambre }}</td>
+
+                <td>{% if colocation.datedisponibilite %}{{ colocation.datedisponibilite|date('Y-m-d') }}{% endif %}</td>
+                <td>
+
+                            <a  class="btn-primary" href="{{ path('colocation_show', { 'idPub': colocation.idPub }) }}">consulter</a>
+                    {% if iduser == colocation.getidUsr.getid %}
+                        <a  class="btn-primary" href="{{ path('colocation_edit', { 'idPub': colocation.idPub }) }}">Modifier</a>
+                                {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+
+        <li>
+            <a href="{{ path('colocation_new') }}">Create a new colocation</a>
+        </li>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(colocations) }}
+        </div>
+        <a href="{{ path('colocation_stat') }}">Afficher Stat</a>
+
+    </ul>
+    {% endblock %}
+    {% block javascripts %}
+
+        <script>
+        jQuery(document).ready(function () {
+            jQuery('#annoncesTable').DataTable({
+                "bPaginate": false,
+                "ordering": false,
+                "info":     false,
+                "sDom": '<"pull-left"f><"pull-right"l>tip',
+
+
+                "aoColumns": [ {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": true}, {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false}, {"bSearchable": false},]
+            });
+
+
+        });
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\jquery.dataTables.min.css') }}" />
+{% endblock %}

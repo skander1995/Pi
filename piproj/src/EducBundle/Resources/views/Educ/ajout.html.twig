@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+    <div class="page-title-section faq">
+        <div class="container">
+            <div class="headline">
+                <h1 class="title">Formulaire d'ajout</h1>
+            </div>
+            <div class="post-container">
+                <form class="create-post" method="post">
+                    <div class="row">
+                    <div class="form-group">
+                        <label> Description</label>
+                        <input class="form-control" placeholder="description">
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label> Section</label>
+                            <input class="form-control" placeholder="section">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label> Matiére</label>
+                            <input class="form-control" placeholder="matiére">
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="form-group">
+                                <label> Document</label>
+                                <input  type="file">
+                            </div>
+                    </div>
+
+                    <div class="row">
+                    <button type="submit" class="btn btn-primary" value="">Ajouter</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>{# .page-header faq #}
+
+
+{% endblock %}

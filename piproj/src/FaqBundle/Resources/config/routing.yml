@@ -1,0 +1,12 @@
+faq_question:
+    resource: "@FaqBundle/Resources/config/routing/question.yml"
+    prefix:   /question
+
+faq_homepage:
+    path:     /faq
+    defaults: { _controller: FaqBundle:Question:index }
+search_ajax:
+    path:     /search
+    defaults: { _controller: FaqBundle:Question:search }
+
+

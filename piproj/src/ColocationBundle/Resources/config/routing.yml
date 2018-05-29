@@ -1,0 +1,10 @@
+colocation_colocation:
+    resource: "@ColocationBundle/Resources/config/routing/colocation.yml"
+    prefix:   /colocation
+
+colocation_homepage:
+    path:     /
+    defaults: { _controller: ColocationBundle:Default:index }
+colocation_test:
+    path:     /test
+    defaults: { _controller: ColocationBundle:Default:test }

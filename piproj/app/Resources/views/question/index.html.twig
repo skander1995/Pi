@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Questions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idpub</th>
+                <th>Idusr</th>
+                <th>Datepub</th>
+                <th>Sujet</th>
+                <th>Description</th>
+                <th>Etat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for question in questions %}
+            <tr>
+                <td><a href="{{ path('question_show', { 'idPub': question.idPub }) }}">{{ question.idPub }}</a></td>
+                <td>{{ question.idUsr }}</td>
+                <td>{% if question.datepub %}{{ question.datepub|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ question.sujet }}</td>
+                <td>{{ question.description }}</td>
+                <td>{{ question.etat }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('question_show', { 'idPub': question.idPub }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('question_edit', { 'idPub': question.idPub }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('question_new') }}">Create a new question</a>
+        </li>
+    </ul>
+{% endblock %}

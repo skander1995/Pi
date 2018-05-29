@@ -1,0 +1,51 @@
+question_index:
+    path:     /
+    defaults: { _controller: "FaqBundle:Question:index" }
+
+
+question_show:
+    path:     /{idPub}/show
+    defaults: { _controller: "FaqBundle:Question:show" }
+    methods:  GET
+
+question_new:
+    path:     /new
+    defaults: { _controller: "FaqBundle:Question:new" }
+    methods:  [GET, POST]
+
+question_edit:
+    path:     /{idPub}/edit
+    defaults: { _controller: "FaqBundle:Question:edit" }
+    methods:  [GET, POST]
+
+question_delete:
+    path:     /{idPub}/delete
+    defaults: { _controller: "FaqBundle:Question:delete" }
+    methods:  DELETE
+
+
+allquest_mob:
+    path:     /all
+    defaults: { _controller: FaqBundle:Question:findall_mob}
+findquest_mob:
+    path:     /find/{id}
+    defaults: { _controller: FaqBundle:Question:fin_mob}
+addquest_mob:
+    path:     /add/{idusr}/{desc}
+    defaults: { _controller: FaqBundle:Question:new_mob}
+
+deletequest_educ_mob:
+    path:     /delete/{id}
+    defaults: { _controller: FaqBundle:Question:delete_mob}
+
+
+
+
+commques_add_mob:
+    path:     /comadd/{idusr}/{idpub}/{contenu}
+    defaults: { _controller: FaqBundle:Question:Add_commentmob}
+
+
+allques_comments_mob:
+    path:     /comments/all
+    defaults: { _controller: FaqBundle:Question:All_commentsmob}

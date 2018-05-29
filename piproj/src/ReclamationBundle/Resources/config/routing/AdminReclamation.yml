@@ -1,0 +1,35 @@
+admin_reclamation:
+    path:  /
+    defaults: { _controller: "ReclamationBundle:AdminReclamation:index" }
+
+admin_reclmation_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "ReclamationBundle:AdminReclamation:sort" }
+    requirements: { type: ASC|DESC }
+
+admin_reclmation_show:
+    path:  /{id}/show
+    defaults: { _controller: "ReclamationBundle:AdminReclamation:show" }
+
+admin_reclmation_new:
+    path:  /new
+    defaults: { _controller: "ReclamationBundle:AdminReclamation:new" }
+
+admin_reclmation_create:
+    path:  /create
+    defaults: { _controller: "ReclamationBundle:AdminReclamation:create" }
+    requirements: { method: post }
+
+admin_reclmation_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "ReclamationBundle:AdminReclamation:edit" }
+
+admin_reclmation_update:
+    path:  /{id}/update
+    defaults: { _controller: "ReclamationBundle:AdminReclamation:update" }
+    requirements: { method: post|put }
+
+admin_reclmation_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "ReclamationBundle:AdminReclamation:delete" }
+    requirements: { method: post|delete }

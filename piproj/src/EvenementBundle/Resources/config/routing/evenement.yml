@@ -1,0 +1,36 @@
+admin_evenement:
+    path:  /
+    defaults: { _controller: "EvenementBundle:AdminEvenement:index" }
+
+admin_evenement_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "EvenementBundle:AdminEvenement:sort" }
+    requirements: { type: ASC|DESC }
+
+admin_evenement_show:
+    path:  /{id}/show/admin
+    defaults: { _controller: "EvenementBundle:AdminEvenement:show" }
+
+admin_evenement_new:
+    path:  /new
+    defaults: { _controller: "EvenementBundle:AdminEvenement:new" }
+
+admin_evenement_create:
+    path:  /create
+    defaults: { _controller: "EvenementBundle:AdminEvenement:create" }
+    requirements: { method: post }
+
+admin_evenement_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "EvenementBundle:AdminEvenement:edit" }
+
+admin_evenement_update:
+    path:  /{id}/update
+    defaults: { _controller: "EvenementBundle:AdminEvenement:update" }
+    requirements: { method: post|put }
+
+admin_evenement_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "EvenementBundle:AdminEvenement:delete" }
+    requirements: { method: post|delete }
+

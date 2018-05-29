@@ -1,0 +1,36 @@
+evenement_admin_evenement:
+    resource: "@EvenementBundle/Resources/config/routing/evenement.yml"
+    prefix:   /admin/evenement
+
+evenement_evenement:
+    resource: "@EvenementBundle/Resources/config/routing/event.yml"
+    prefix:   /evenement
+
+participer_evenement:
+    path:     /participer/{evenement}
+    defaults: { _controller: EvenementBundle:Evenement:participer }
+
+annuler_evenement:
+    path:     /annuler/{evenement}
+    defaults: { _controller: EvenementBundle:Evenement:annulerparticipation }
+createservice_evenement:
+    path:     /new/event/
+    defaults: { _controller: EvenementBundle:Default:newEvtFromJson }
+indexservice_evenement:
+    path:     /index/event/
+    defaults: { _controller: EvenementBundle:Default:indexJson}
+EventUpload_json:
+    path:     /event/uploadphoto/
+    defaults: { _controller: EvenementBundle:Default:uploadPhoto}
+EventDelete_json:
+    path:     /event/delete/
+    defaults: { _controller: EvenementBundle:Default:deleteJson}
+check_json:
+    path:     /event/check/
+    defaults: { _controller: EvenementBundle:Default:checkJson}
+Eventpart_json:
+    path:     /event/part/
+    defaults: { _controller: EvenementBundle:Default:participerJson}
+EventApart_json:
+    path:     /event/apart/
+    defaults: { _controller: EvenementBundle:Default:annulerparticipationJson}

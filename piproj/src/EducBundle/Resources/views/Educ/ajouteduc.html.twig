@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+    <div class="page-title-section faq">
+        <div class="container" >
+            <div class="headline">
+                <h1 class="title">Formulaire d'ajout</h1>
+            </div>
+            <div class="post-container" >
+
+                {{ form_start(form) }}
+                <table align="center"  class="tabfo" >
+
+                    <tr>
+                        <td >{{ form_label(form.description) }}</td>
+                        <td >{{ form_widget(form.description) }}</td>
+                    </tr>
+
+                    <tr>
+                        <td >{{ form_label(form.section) }}</td>
+                        <td >{{ form_widget(form.section) }}</td>
+                    </tr>
+
+                    <tr>
+                        <td >{{ form_label(form.matiere) }}</td>
+                        <td >{{ form_widget(form.matiere) }}</td>
+                    </tr>
+
+                    <tr>
+                        <td >{{ form_label(form.document) }}</td>
+                        <td class="btn btn-primary btn-file">Browse...{{ form_widget(form.document) }}</td>
+                    </tr>
+
+                </table>
+<span class="btn btn-primary btn-save">
+    Valider{{ form_widget(form.Valider) }}
+</span>
+                        {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

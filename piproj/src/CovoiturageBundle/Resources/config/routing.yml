@@ -1,0 +1,17 @@
+covoiturage_covoiturage:
+    resource: "@CovoiturageBundle/Resources/config/routing/covoiturage.yml"
+    prefix:   /covoiturage
+
+covoiturage_homepage:
+    path:     /
+    defaults: { _controller: CovoiturageBundle:Default:index }
+    
+covoiturage_EnvoyerMail:
+    path:     /envoyerMail/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturages:Contact }
+covoiturage_newcovjson:
+    path:     /new/cov/
+    defaults: { _controller: CovoiturageBundle:Default:newCovoiturageJson }
+covoiturage_getcovjson:
+    path:     /get/cov/all
+    defaults: { _controller: CovoiturageBundle:Default:getAllCovoiturageJson }

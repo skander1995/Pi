@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>                       Liste des évenements</h1>
+     <hr>
+    <div class="container" >
+
+    <div class="col-md-11 col-sm-11" >
+        <div class="friend-list" >
+            <div class="row" >
+
+                {% for evenement in evenements %}
+
+            <div class="col-md-4 col-sm-4" style="clear: top">
+                <div class="friend-card " >
+                    <div class="img-responsive" ><img src="{{ asset('uploads/images/')~evenement.affiche}}" width="400px" height="150px"  ></div>
+                    <div class="card-info">
+                        <img src="{{ asset('uploads/images/')~evenement.idUsr.PhotoProfile}}" alt="user" class="profile-photo-lg">
+                        <div class="friend-info">
+                            <h3><a href="{{ path('evenement_show', { 'idPub': evenement.id }) }}">{{ evenement.nomEvent }}</a></h3>
+                            <h5><i class="icon ion-ios-location-outline"></i>   {{ evenement.lieu }}</h5>
+
+                                {#<h5> Date pub :{% if evenement.datepub %}{{ evenement.datepub|date('Y-m-d') }}{% endif %}</h5>#}
+                                <h5><i class="icon ion-android-time"></i>  Date début :{% if evenement.datedebut %}{{ evenement.datedebut|date('Y-m-d') }}{% endif %}</h5>
+                                <h5><i class="icon ion-android-time"></i>  Date fin :{% if evenement.datefin %}{{ evenement.datefin|date('Y-m-d') }}{% endif %}</h5>
+                               {# <td>{{ evenement.affiche }}</td>#}
+                            <h5><i class="icon ion-ios-people"></i>Nombre des places disponibles :{{ evenement.placeDispo }}</h5>
+{# <p> {{ evenement.description }}</p>#}
+
+             <a href="{{ path('evenement_show', { 'idPub': evenement.id }) }}" class="btn-primary pull-right" >Consulter</a>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+</div>
+        <div class="col-md-4 col-sm-4"></div>
+        <div class="col-md-4 col-sm-4">
+            {# display navigation #}
+            <div class="pagination">
+                {{ knp_pagination_render(evenements) }}
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4"></div>
+</div>
+
+</div>
+
+
+<a href="{{ path('evenement_new') }}" class="btn btn-block">+ Créer un nouveau évenement</a>
+
+{% endblock %}

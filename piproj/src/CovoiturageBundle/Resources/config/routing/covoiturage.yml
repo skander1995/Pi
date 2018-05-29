@@ -1,0 +1,31 @@
+covoiturage_index:
+    path:     /
+    defaults: { _controller: "CovoiturageBundle:Covoiturage:index" }
+    methods:  GET
+
+covoiturage_show:
+    path:     /{idPub}/show
+    defaults: { _controller: "CovoiturageBundle:Covoiturage:show" }
+    methods:  GET
+
+covoiturage_new:
+    path:     /new
+    defaults: { _controller: "CovoiturageBundle:Covoiturage:new" }
+    methods:  [GET, POST]
+
+covoiturage_edit:
+    path:     /{idPub}/edit
+    defaults: { _controller: "CovoiturageBundle:Covoiturage:edit" }
+    methods:  [GET, POST]
+
+covoiturage_delete:
+    path:     /{idPub}/delete
+    defaults: { _controller: "CovoiturageBundle:Covoiturage:delete" }
+    methods:  DELETE
+recherche_annonce:
+    path:     /recherche
+    defaults: { _controller: "CovoiturageBundle:Covoiturages:rechercheAnn" }
+covoiturage_show2:
+    path:     /show2
+    defaults: { _controller: "CovoiturageBundle:Covoiturages:index2" }
+    methods:  GET

@@ -1,0 +1,90 @@
+evenement:
+    resource: "@EvenementBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin_user:
+    resource: "@AdminUserBundle/Controller/"
+    type:     annotation
+
+admin_r_user:
+    resource: "@AdminUserBundle/Resources/config/routing.yml"
+    prefix:  /admin
+
+faq_admin_faq:
+    resource: "@FaqBundle/Resources/config/routing/AdminQuestion.yml"
+    prefix: /admin
+
+rec_admin_rec:
+    resource: "@ReclamationBundle/Resources/config/routing/AdminReclamation.yml"
+    prefix: /admin
+
+covoiturage_admin_covoiturage:
+    resource: "@CovoiturageBundle/Resources/config/routing/AdminCovoiturage.yml"
+    prefix:   /admin/covoiturage
+
+colocation_admin_colocation:
+    resource: "@ColocationBundle/Resources/config/routing/colocation.yml"
+    prefix:   /admin/colocation
+
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+avanzu_admin:
+    resource: "@AvanzuAdminThemeBundle/Resources/config/routes.yml"
+    
+#FOSUserBundle routing file
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+# image processing bundle
+# https://github.com/liip/LiipImagineBundle
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+avanzu_admin_profile:
+    path: /profile
+
+admin_login:
+    path:  /admin/login
+    defaults: { _controller: FOSUserBundle:Security:login }
+
+admin_login_check:
+    path:  /admin/login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+admin_logout:
+    path:  /admin/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+
+
+#added for template admin adoption
+reclamation:
+    resource: "@ReclamationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+educ:
+    resource: "@EducBundle/Resources/config/routing.yml"
+    prefix:   /
+
+covoiturage:
+    resource: "@CovoiturageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+colocation:
+    resource: "@ColocationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tmp:
+    resource: "@TmpBundle/Resources/config/routing.yml"
+    prefix:   /
+
+faq:
+    resource: "@FaqBundle/Resources/config/routing.yml"
+    prefix:   /
+

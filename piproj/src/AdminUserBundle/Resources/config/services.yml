@@ -1,0 +1,10 @@
+services:
+    admin_user.resetting.form.type:
+        class: AdminUserBundle\Form\ResettingFormType
+        tags:
+            - { name: form.type, alias: admin_user_resetting }
+
+    admin_user.profile.form.type:
+        class: AdminUserBundle\Form\UserType
+        tags:
+            - { name: form.type, alias: admin_user_profile }

@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" xmlns="http://www.w3.org/1999/html">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <h1> {{ evenement.nomEvent }}</h1>
+
+
+            </div>
+            <div class="col-sm-12">
+                <div class="line-divider"></div>
+            </div>
+
+
+            <img src="{{ asset('uploads/images/')~evenement.affiche }}" class="img-responsive post-image">
+            <hr>
+            <div class="col-sm-12">
+
+                {% if part == 0 %}
+                <a href="{{ path('annuler_evenement',{'evenement': evenement.id}) }}" class="btn btn-primary pull-right"> ✔  Annuler participation</a>
+                {% endif %}
+                {% if part == 1 %}
+                <a href="{{ path('participer_evenement',{'evenement': evenement.id}) }}" class="btn btn-primary pull-right">+ participer</a>
+                {% endif %}
+                {% if ok == 1 %}
+
+                    <a href="{{ path('evenement_edit', { 'idPub': evenement.id }) }}" class="btn btn-info pull-left ">Edit</a>
+
+
+                    {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete" class="btn btn-warning">
+                    {{ form_end(delete_form) }}
+                {% endif %}
+            </div>
+            <hr>
+
+            {# <tr>
+                 <th>Datepub</th>
+                 <td>{% if evenement.datepub %}{{ evenement.datepub|date('Y-m-d') }}{% endif %}</td>
+             </tr>#}
+            <div class="post-container">
+                <div class="post-detail">
+                    <th><h5><i class="icon ion-ios-paper"></i>Description : </h5></th>
+
+                    <p>{{ evenement.description }}</p>
+                </div>
+                {# <tr>
+                     <th>Etat</th>
+                     <td>{{ evenement.etat }}</td>
+                 </tr>#}
+
+                <div class="line-divider"></div>
+                <h5><i class="icon ion-android-time"></i> Date de début :</h5>
+                <p>{% if evenement.datedebut %}{{ evenement.datedebut|date('Y-m-d') }}{% endif %}</p>
+
+
+                <h5><i class="icon ion-android-time"></i> Date de fin :</h5>
+                <p>{% if evenement.datefin %}{{ evenement.datefin|date('Y-m-d') }}{% endif %}</p>
+
+                <div class="line-divider"></div>
+                <h5><i class="icon ion-ios-location-outline"></i>Lieu : </h5>
+                <p>{{ evenement.lieu }}</p>
+                <div class="line-divider"></div>
+
+                <th><h5><i class="icon ion-ios-people"></i>Nombre des places dispos : </h5></th>
+                <p>{{ evenement.placeDispo }}</p>
+
+                <div class="line-divider"></div>
+            </div>
+            <div class="col-sm-12">
+
+        </div>
+            <div class="col-sm-12">
+
+                    <a href="{{ path('evenement_index') }}" class="btn btn-block" >La liste des évènements</a>
+                <div class="line-divider"></div>
+            </div>
+            <hr>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            $('#reserver').click(function () {
+
+            })
+            $('#annulerParticipation').click(function () {
+
+            })
+        })
+    </script>
+{% endblock %}

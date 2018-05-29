@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Colocation</h1>
+
+    <table>
+        <tbody>
+
+
+            <tr>
+                <th>Datepub</th>
+                <td>{% if colocation.datepub %}{{ colocation.datepub|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ colocation.description }}</td>
+            </tr>
+
+            <tr>
+                <th>Lieu</th>
+                <td>{{ colocation.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Loyermensuel</th>
+                <td>{{ colocation.loyermensuel }}</td>
+            </tr>
+            <tr>
+                <th>Typelogement</th>
+                <td>{{ colocation.typelogement }}</td>
+            </tr>
+
+            <tr>
+                <th>Imgcouverture</th>
+                <td>{{ colocation.imgcouverture }}</td>
+            </tr>
+            <tr>
+                <th>Nbchambre</th>
+                <td>{{ colocation.nbchambre }}</td>
+            </tr>
+            <tr>
+                <th>Commodite</th>
+                <td>{{ colocation.commodite }}</td>
+            </tr>
+            <tr>
+                <th>Datedisponibilite</th>
+                <td>{% if colocation.datedisponibilite %}{{ colocation.datedisponibilite|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('colocation_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('colocation_edit', { 'idPub': colocation.idPub }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+
+        </li>
+    </ul>
+
+{% endblock %}

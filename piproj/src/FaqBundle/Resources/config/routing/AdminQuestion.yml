@@ -1,0 +1,35 @@
+admin_faq:
+    path:  /faq
+    defaults: { _controller: "FaqBundle:AdminQuestion:index" }
+
+admin_faq_sort:
+    path:  /faq/{field}/{type}/sort
+    defaults: { _controller: "FaqBundle:AdminQuestion:sort" }
+    requirements: { type: ASC|DESC }
+
+admin_faq_show:
+    path:  /faq/{id}/show
+    defaults: { _controller: "FaqBundle:AdminQuestion:show" }
+
+admin_faq_new:
+    path:  /faq/new
+    defaults: { _controller: "FaqBundle:AdminQuestion:new" }
+
+admin_faq_create:
+    path:  /faq/create
+    defaults: { _controller: "FaqBundle:AdminQuestion:create" }
+    requirements: { method: post }
+
+admin_faq_edit:
+    path:  /faq/{id}/edit
+    defaults: { _controller: "FaqBundle:AdminQuestion:edit" }
+
+admin_faq_update:
+    path:  /faq/{id}/update
+    defaults: { _controller: "FaqBundle:AdminQuestion:update" }
+    requirements: { method: post|put }
+
+admin_faq_delete:
+    path:  /faq/{id}/delete
+    defaults: { _controller: "FaqBundle:AdminQuestion:delete" }
+    requirements: { method: post|delete }
